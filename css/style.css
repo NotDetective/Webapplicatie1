@@ -1,0 +1,9 @@
+h1, p{
+    font-family: 'Atomic Age', cursive;
+}
+
+header{
+    width: 1920px;
+    background-color: green;
+    height: 200px;
+}
