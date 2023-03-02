@@ -1,9 +1,110 @@
+/* code for eveything */
+
 h1, p{
     font-family: 'Atomic Age', cursive;
 }
 
+a{
+    list-style-type: none;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+body{
+    /* themp code for background for coding */
+    background-color: #DADADA;
+
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+/* header code */
+
 header{
     width: 1920px;
-    background-color: green;
-    height: 200px;
+    height: 240px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div{
+    margin-left: 20px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+header nav{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+header div div{
+    background-color: #FF0000;
+    width: 172px;
+    height: 172px;
+    border-radius: 50%;
+    border: 7px solid #000000;
+}
+
+header div div img{
+    width: 172px;
+    height: 172px;
+}
+
+header nav a button{
+    width: 186px;
+    height: 59px;
+    background-color: #FF0000;
+    border: 4px solid #000000;
+    border-radius: 30px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Atomic Age', cursive;
+}
+
+header nav a{
+    margin-right: 40px;
+}
+
+/* main index */
+
+.main-index{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.main-index section{
+    margin-top: 107px;
+}
+
+.menu-type-food{
+    margin-top: 107px;
+    width: 275px;
+    height: 95px;
+    background-color: #FFE4D3;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-navigation-menu-index{
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
