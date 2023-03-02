@@ -7,6 +7,7 @@
     <title>Atomic Sushi</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/icon-or-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap');
     </style> 
@@ -61,14 +62,64 @@
         </a>
 
         <section>
-        <?php 
-        
-        for ($i=0; $i < 10; $i++) { 
-            echo '<div>sussy</div>'; 
-        }
-        
-        
-        ?>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php 
+                    
+                    for ($i=0; $i < 3; $i++) { 
+                        echo 
+                        "
+                        <div class='swiper-slide'>
+                        <div class='swiper-slide-menu'>
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+                    </div>
+                        </div> 
+                        ";
+                    }
+                    
+                    ?>
+                    ...
+                </div>
+  
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                
+
+            </div>
         </section>
 
         <a href="#hyperlink-menu-top">
@@ -78,14 +129,64 @@
         </a>
 
         <section>
-        <?php 
-        
-        for ($i=0; $i < 10; $i++) { 
-            echo '<div>sussy</div>'; 
-        }
-        
-        
-        ?>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php 
+                    
+                    for ($i=0; $i < 3; $i++) { 
+                        echo 
+                        "
+                        <div class='swiper-slide'>
+                        <div class='swiper-slide-menu'>
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+                    </div>
+                        </div> 
+                        ";
+                    }
+                    
+                    ?>
+                    ...
+                </div>
+  
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                
+
+            </div>
         </section>
 
         <a href="#hyperlink-menu-top">
@@ -95,15 +196,81 @@
         </a>
 
         <section>
-        <?php 
-        
-        for ($i=0; $i < 10; $i++) { 
-            echo '<div>sussy</div>'; 
-        }
-        
-        
-        ?>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php 
+                    
+                    for ($i=0; $i < 3; $i++) { 
+                        echo 
+                        "
+                        <div class='swiper-slide'>
+                        <div class='swiper-slide-menu'>
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
+                        </div>
+                    </div>
+                        </div> 
+                        ";
+                    }
+                    
+                    ?>
+                    ...
+                </div>
+  
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                
+
+            </div>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+
+            pagination: {
+               el: '.swiper-pagination',
+            },
+  
+            navigation: {
+               nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 </html>
