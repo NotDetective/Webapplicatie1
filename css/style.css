@@ -1,27 +1,27 @@
 /* code for eveything */
 
-h1, p{
+h1,
+p {
     font-family: 'Atomic Age', cursive;
 }
 
-a{
+a {
     list-style-type: none;
     text-decoration: none;
     list-style: none;
     color: black;
 }
 
-body{
+body {
     /* themp code for background for coding */
     /* background-color: #DADADA; */
-
     margin-left: 0px;
     margin-top: 0px;
 }
 
 /* header code */
 
-header{
+header {
     width: 1920px;
     height: 240px;
     background-color: white;
@@ -31,7 +31,7 @@ header{
     align-items: center;
 }
 
-header div{
+header div {
     margin-left: 20px;
     width: 600px;
     display: flex;
@@ -40,7 +40,7 @@ header div{
     font-size: 20px;
 }
 
-header nav{
+header nav {
     width: 500px;
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@ header nav{
     font-size: 20px;
 }
 
-header div div{
+header div div {
     background-color: #FF0000;
     width: 172px;
     height: 172px;
@@ -56,12 +56,12 @@ header div div{
     border: 7px solid #000000;
 }
 
-header div div img{
+header div div img {
     width: 172px;
     height: 172px;
 }
 
-header nav a button{
+header nav a button {
     width: 186px;
     height: 59px;
     background-color: #FF0000;
@@ -74,24 +74,24 @@ header nav a button{
     font-family: 'Atomic Age', cursive;
 }
 
-header nav a{
+header nav a {
     margin-right: 40px;
 }
 
 /* main index */
 
-.main-index{
+.main-index {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main.main-index section{
+main.main-index section {
     margin-top: 107px;
 }
 
-.menu-type-food{
+.menu-type-food {
     margin-top: 107px;
     width: 275px;
     height: 95px;
@@ -102,29 +102,23 @@ main.main-index section{
     align-items: center;
 }
 
-.top-navigation-menu-index{
+.top-navigation-menu-index {
     width: 1500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* slider code */
 
-.swiper{
-    width: 1700px;
-    height: fit-content;
+.menu-items {
+    width: 1500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
 
-.swiper-slide-menu{
-    height: 800px;
-    width: 1600px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.swiper-slide-menu div{
+.menu-items div {
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 469px;
@@ -136,21 +130,21 @@ main.main-index section{
     align-items: center;
 }
 
-.swiper-slide-menu div img{
+.menu-items div img {
     width: 368px;
     height: 244.88px;
     border-radius: 30px 0px;
     background-color: #000000;
 }
 
-.swiper-slide-menu div div h1{
+.menu-items div div h1 {
     font-family: serif;
     font-size: 60px;
     color: #5AD6FF;
     margin-right: 20px;
 }
 
-.swiper-slide-menu span{
+.menu-items span {
     background-color: #FF0000;
     border-radius: 50%;
     width: 32px;
@@ -158,7 +152,7 @@ main.main-index section{
     margin-left: 20px;
 }
 
-.swiper-slide-menu div div{
+.menu-items div div {
     display: flex;
     height: 100px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
@@ -166,11 +160,52 @@ main.main-index section{
     justify-content: space-around;
 }
 
-.swiper-slide-menu div p{
+.menu-items div p {
     width: 400px;
 }
 
-.swiper-slide-menu div div p{
+.menu-items div div p {
     font-size: 40px;
-    margin-left:20px ;
+    margin-left: 20px;
+}
+
+/* login-register-main */
+.login-or-registers-page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login-or-registers-page form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 500px;
+}
+
+form input {
+    width: 500px;
+    height: 80px;
+    background: #FF8A98;
+    border: 4px solid #000000;
+    border-radius: 30px;
+    font-size: larger;
+    font-family: 'Atomic Age', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-or-registers-page h1 {
+    margin-left: 180px;
+    font-size: xx-large;
+}
+
+.login-register {
+    width: 186px;
+    height: 59px;
+    background: #FF0000;
+    border: 4px solid #000000;
+    border-radius: 30px;
+    margin-left: 170px;
 }
