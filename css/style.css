@@ -172,7 +172,7 @@ main.main-index section {
 /* login-register-main */
 .login-or-registers-page {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 

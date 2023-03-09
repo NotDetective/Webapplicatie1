@@ -41,7 +41,7 @@
 
         <section>
             <h1>Login</h1>
-            <form naam="login" action="temp_loginedscrean.php" method="POST">
+            <form naam="login" action=".gitignore/temp_loginedscrean.php" method="POST">
 
                 <input type="username" name='username' placeholder="username">
 
@@ -52,22 +52,6 @@
             </form>
 
         </section>
-
-        <section>
-            <h1>Register</h1>
-            <form naam="register" action="" method="POST">
-
-                <input type="name" name='name' placeholder="name">
-
-                <input type="username" name='username' placeholder="username">
-
-                <input type="password" name='password' placeholder="password">
-
-                <input class="login-register" type="submit" name='submit' value="register">
-
-            </form>
-        </section>
-
 
     </main>
 </body>
