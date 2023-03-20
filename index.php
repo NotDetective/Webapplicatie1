@@ -1,3 +1,12 @@
+<?php
+    require_once 'pages/conn.php';
+
+    $stmt = $conn->prepare("SELECT * FROM sushi");
+
+    $stmt->execute(); 
+    $products_sushi = $stmt->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,26 +77,24 @@
             <div class="menu-items">
                 <?php
 
-                for ($i=0; $i < 5; $i++) { 
-                    echo"
-                    
-                    <div>
-                        <h1>Naam</h1>
-                        <img src='' alt=''>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                    foreach ($products_sushi AS $product){
+                        echo"
                         <div>
-                            <span></span>
-                            <p>Price</p>
-                            <h1>+</h1>
+                            <h1>".$products_sushi['name']."</h1>
+                            <img src='".$products['image']."' alt='img_product'>
+                            <p>".$products['description']."</p>
+                            <div>
+                                <span></span>
+                                <p>".$products['price']."</p>
+                                <h1>+</h1>
+                            </div>
                         </div>
-                    </div>
-
-                    ";
-                };
+                        ";
+                    }
 
                 ?>
             </div>
-            
+
         </section>
 
         <a href="#hyperlink-menu-top">
@@ -134,22 +141,22 @@
             <div class="menu-items">
                 <?php
 
-                for ($i=0; $i < 5; $i++) { 
-                    echo"
-                    
-                    <div>
-                        <h1>Naam</h1>
-                        <img src='' alt=''>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                    for ($i=0; $i < 5; $i++) { 
+                        echo"
+                        
                         <div>
-                            <span></span>
-                            <p>Price</p>
-                            <h1>+</h1>
+                            <h1>Naam</h1>
+                            <img src='' alt=''>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                            <div>
+                                <span></span>
+                                <p>Price</p>
+                                <h1>+</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    ";
-                };
+                        ";
+                    };
 
                 ?>
             </div>

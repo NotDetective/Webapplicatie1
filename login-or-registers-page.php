@@ -37,17 +37,54 @@
         </nav>
     </header>
 
+    <div>
+        <?php
+            session_start();
+            echo "<p class='confirm-message'>".$_SESSION['confirm-register-message']."</p>";
+            $_SESSION['confirm-register-message'] = "";
+        ?>
+    </div>
+
     <main class="login-or-registers-page">
+        
 
         <section>
             <h1>Login</h1>
-            <form naam="login" action=".gitignore/temp_loginedscrean.php" method="POST">
+            <form naam="login" action="login-page.php" method="POST">
 
-                <input type="username" name='username' placeholder="username">
+                <input type="username" name='username' placeholder="username" required>
 
-                <input type="password" name='password' placeholder="password">
+                <input type="password" name='password' placeholder="password" required>
+
+                <?php
+                    session_start();
+                    echo "<p>".$_SESSION['login-message']."</p>";
+                    $_SESSION['login-message'] = "";
+
+                ?>
 
                 <input class="login-register" type="submit" name='submit' value="login">
+
+            </form>
+
+        </section>
+
+        <section>
+            <h1>register</h1>
+            <form naam="register" action="register-page.php" method="POST">
+
+                <input type="username" name='username' placeholder="username" required>
+
+                <input type="password" name='password' placeholder="password" required>
+
+                <?php
+
+                    session_start();
+                    echo "<p>".$_SESSION['register-message']."</p>";
+                    $_SESSION['register-message'] = "";
+                ?>
+
+                <input class="login-register" type="submit" name='submit' value="register">
 
             </form>
 
