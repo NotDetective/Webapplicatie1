@@ -15,18 +15,20 @@
         $username = $_POST['username'];
   
         $password = $_POST['password'];
-
-        echo $password;
-       
         
-            $stmt = $conn->prepare("SELECT username, password FROM user WHERE username=:username AND password=:password");
+            $stmt = $conn->prepare("SELECT username, password, roll FROM user WHERE username=:username AND password=:password");
 
             $stmt->execute(['username' => $username, 'password' => $password]); 
             $row = $stmt->fetch();
 
-
             if ($row['username'] == $username AND $row['password'] == $password) {
-                echo "login";
+                if ($row['roll'] < 10) {
+                    header("Location: backlog.php");
+                }else{
+                    header("Location: login-or-registers-page.php");
+                    session_start();
+                    $_SESSION['confirm-register-message'] = "login successfully";
+                }
             }
             else{
                 session_start();

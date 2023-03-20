@@ -76,6 +76,10 @@ header nav a {
     margin-right: 40px;
 }
 
+.header-name{
+    width: 1000px;
+}
+
 /* main index */
 
 .main-index {

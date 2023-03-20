@@ -33,7 +33,7 @@
                 echo "new record created";
                 session_start();
                 $_SESSION['register-message'] = "";
-                $_SESSION['confirm-register-message'] = "Login successfully";
+                $_SESSION['confirm-register-message'] = "register successfully";
                 header("Location: login-or-registers-page.php");
             }
         }

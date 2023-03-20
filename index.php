@@ -76,22 +76,22 @@
 
             <div class="menu-items">
                 <?php
-
                     foreach ($products_sushi AS $product){
-                        echo"
-                        <div>
-                            <h1>".$products_sushi['name']."</h1>
-                            <img src='".$products['image']."' alt='img_product'>
-                            <p>".$products['description']."</p>
+                        if  ($product['category'] == 1){
+                            echo"
                             <div>
-                                <span></span>
-                                <p>".$products['price']."</p>
-                                <h1>+</h1>
+                                <h1>".$product['name']."</h1>
+                                <img src='".$product['image']."' alt='img_product'>
+                                <p>".$product['description']."</p>
+                                <div>
+                                    <span></span>
+                                    <p>€".$product['price']."</p>
+                                    <h1>+</h1>
+                                </div>
                             </div>
-                        </div>
-                        ";
+                            ";
+                        }
                     }
-
                 ?>
             </div>
 
@@ -107,24 +107,22 @@
 
             <div class="menu-items">
                 <?php
-
-                for ($i=0; $i < 5; $i++) { 
-                    echo"
-                    
-                    <div>
-                        <h1>Naam</h1>
-                        <img src='' alt=''>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
-                        <div>
-                            <span></span>
-                            <p>Price</p>
-                            <h1>+</h1>
-                        </div>
-                    </div>
-
-                    ";
-                };
-
+                    foreach ($products_sushi AS $product){
+                        if  ($product['category'] == 2){
+                            echo"
+                            <div>
+                                <h1>".$product['name']."</h1>
+                                <img src='".$product['image']."' alt='img_product'>
+                                <p>".$product['description']."</p>
+                                <div>
+                                    <span></span>
+                                    <p>€".$product['price']."</p>
+                                    <h1>+</h1>
+                                </div>
+                            </div>
+                            ";
+                        }
+                    }
                 ?>
             </div>
 
@@ -140,24 +138,22 @@
 
             <div class="menu-items">
                 <?php
-
-                    for ($i=0; $i < 5; $i++) { 
-                        echo"
-                        
-                        <div>
-                            <h1>Naam</h1>
-                            <img src='' alt=''>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis.</p>
+                    foreach ($products_sushi AS $product){
+                        if  ($product['category'] == 3){
+                            echo"
                             <div>
-                                <span></span>
-                                <p>Price</p>
-                                <h1>+</h1>
+                                <h1>".$product['name']."</h1>
+                                <img src='".$product['image']."' alt='img_product'>
+                                <p>".$product['description']."</p>
+                                <div>
+                                    <span></span>
+                                    <p>€" .$product['price']."</p>
+                                    <h1>+</h1>
+                                </div>
                             </div>
-                        </div>
-
-                        ";
-                    };
-
+                            ";
+                        }
+                    }
                 ?>
             </div>
             
