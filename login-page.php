@@ -23,7 +23,7 @@
 
             if ($row['username'] == $username AND $row['password'] == $password) {
                 if ($row['roll'] < 10) {
-                    header("Location: backlog.php");
+                    header("Location: backlog-pages/backlog.php");
                 }else{
                     header("Location: login-or-registers-page.php");
                     session_start();

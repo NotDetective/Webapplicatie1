@@ -76,8 +76,13 @@ header nav a {
     margin-right: 40px;
 }
 
-.header-name{
-    width: 1000px;
+.header-name-admin{
+    margin-left: 100px;
+    width: 500px;
+}
+
+.backlog{
+    background-color: #d5d5d5;
 }
 
 /* main index */
@@ -218,4 +223,14 @@ form p{
 
 .confirm-message{
     color: red;
+}
+
+/* Main backlog */
+
+.main-backlog p, .main-backlog h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-backlog{
+    background-color: #d5d5d5;
 }
