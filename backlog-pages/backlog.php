@@ -21,7 +21,7 @@
             <h1 class="header-name-admin">Atomic Sushi Admin</h1>
         </div>
         <nav>
-            <a href="add-menu-item.php">
+            <a href="add-menu-item-page.php">
                 <button>
                     <p>Add item</p>
                 </button>
@@ -34,7 +34,7 @@
         </nav>
     </header>
     <main class="main-backlog">
-        
+        <h1>backlog</h1>
     </main>
 
 </body>

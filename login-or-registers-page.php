@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +42,6 @@
 
     <div>
         <?php
-            session_start();
             echo "<p class='confirm-message'>".$_SESSION['confirm-register-message']."</p>";
             $_SESSION['confirm-register-message'] = "";
         ?>
@@ -52,18 +54,17 @@
             <h1>Login</h1>
             <form naam="login" action="login-page.php" method="POST">
 
-                <input type="username" name='username' placeholder="username" required>
+                <input class="input-form-login-register-page" type="username" name='username' placeholder="username" required maxlength="8">
 
-                <input type="password" name='password' placeholder="password" required>
+                <input class="input-form-login-register-page" type="password" name='password' placeholder="password" required>
 
                 <?php
-                    session_start();
                     echo "<p>".$_SESSION['login-message']."</p>";
                     $_SESSION['login-message'] = "";
 
                 ?>
 
-                <input class="login-register" type="submit" name='submit' value="login">
+                <input class="submit-login-register-page" type="submit" name='submit' value="login">
 
             </form>
 
@@ -73,18 +74,16 @@
             <h1>register</h1>
             <form naam="register" action="register-page.php" method="POST">
 
-                <input type="username" name='username' placeholder="username" required>
+                <input class="input-form-login-register-page" type="username" name='username' placeholder="username" required>
 
-                <input type="password" name='password' placeholder="password" required>
+                <input class="input-form-login-register-page" type="password" name='password' placeholder="password" required>
 
                 <?php
-
-                    session_start();
                     echo "<p>".$_SESSION['register-message']."</p>";
                     $_SESSION['register-message'] = "";
                 ?>
 
-                <input class="login-register" type="submit" name='submit' value="register">
+                <input class="submit-login-register-page" type="submit" name='submit' value="register">
 
             </form>
 

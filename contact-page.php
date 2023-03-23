@@ -1,3 +1,6 @@
+<?php 
+    // section_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +30,20 @@
                     <p>Contact</p>
                 </button>
             </a>
+            <?php 
+            if (isset($_SESSION['username'])):?>
+            <a href="logout.php">
+                <button>
+                    <p>log out</p>
+                </button>
+            </a>
+            <?php else: ?>
             <a href="login-or-registers-page.php">
                 <button>
                     <p>Log in</p>
                 </button>
             </a>
+            <?php endif; ?>
         </nav>
     </header>
 

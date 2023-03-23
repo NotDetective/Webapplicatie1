@@ -9,7 +9,7 @@
 <body>
     
     <?php
-
+        session_start();
         require_once 'pages/conn.php';
 
         $username = $_POST['username'];
@@ -25,13 +25,13 @@
                 if ($row['roll'] < 10) {
                     header("Location: backlog-pages/backlog.php");
                 }else{
-                    header("Location: login-or-registers-page.php");
-                    session_start();
-                    $_SESSION['confirm-register-message'] = "login successfully";
+                    
+
+                    $_SESSION['username'] = $username;
+                    header("Location: index.php");
                 }
             }
             else{
-                session_start();
                 $_SESSION['login-message'] = "username or password is not correct";
                 header("Location: login-or-registers-page.php");
             }

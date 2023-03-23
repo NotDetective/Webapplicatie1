@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'pages/conn.php';
 
     $stmt = $conn->prepare("SELECT * FROM sushi");
@@ -23,6 +24,7 @@
     </style>
 </head>
 
+
 <body>
     <header>
         <div>
@@ -37,11 +39,20 @@
                     <p>Contact</p>
                 </button>
             </a>
+            <?php 
+            if (isset($_SESSION['username'])):?>
+            <a href="logout.php">
+                <button>
+                    <p>log out</p>
+                </button>
+            </a>
+            <?php else: ?>
             <a href="login-or-registers-page.php">
                 <button>
                     <p>Log in</p>
                 </button>
             </a>
+            <?php endif; ?>
         </nav>
     </header>
 
