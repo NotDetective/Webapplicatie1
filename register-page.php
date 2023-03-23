@@ -9,29 +9,28 @@
 <body>
     
     <?php
-
+        session_start();
         require_once 'pages/conn.php';
 
         if (isset($_POST['submit'])) {
             $username = $_POST['username']; 
             $password = $_POST['password'];
             if (strpos($username, " ") !== false) {
-                session_start();
+               
                 $_SESSION['register-message'] = "username cant contain a space";
                 header("Location: login-or-registers-page.php");
             }
             else if (strpos($password, " ") !== false) {
-                session_start();
                 $_SESSION['register-message'] = "password cant contain a space";
                 header("Location: login-or-registers-page.php");
             }
             else{
                 $sql = "INSERT INTO user (username, password) 
                 VALUES ('$username', '$password')";
+                
 
                 $conn->exec($sql); 
                 echo "new record created";
-                session_start();
                 $_SESSION['register-message'] = "";
                 $_SESSION['confirm-register-message'] = "register successfully";
                 header("Location: login-or-registers-page.php");

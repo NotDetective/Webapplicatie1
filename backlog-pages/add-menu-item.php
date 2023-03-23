@@ -8,7 +8,34 @@
 </head>
 <body>
     <?php
+        require_once '../pages/conn.php';
+        echo "start <br>";
 
-    ?>
+        if (isset($_POST['item_type'])) {
+        }else{
+            header("Location: add-menu-item-page.php");
+        }
+
+        $name = $_POST['name']; 
+        $description = $_POST['text'];
+        $price = (double)$_POST['price'];
+        $category = (int)$_POST['item_type'];
+
+        
+        $sql = "INSERT INTO sushi (name, description, price, category) 
+        VALUES ('$name', '$description', $price ,$category)";
+        try {
+            $conn->exec($sql);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+         echo "new record created";
+
+        echo "end";
+    ?>  
+
+    <a href="add-menu-item-page.php">
+        <button>back</button>
+    </a>
 </body>
 </html>

@@ -23,7 +23,7 @@
             <h1 class="header-name-admin">Atomic Sushi Admin</h1>
         </div>
         <nav>
-            <a href="add-menu-item-pages.php">
+            <a href="">
                 <button>
                     <p>Add item</p>
                 </button>
@@ -36,32 +36,36 @@
         </nav>
     </header>
     <main class="main-backlog">
-        <h1>ADD IMTEM</h1>
 
-        <form naam="add-menu-item" action="login-page.php" method="POST">
+        <h1>Add new item</h1>
 
-                <input class="style-input-add-item" type="text" name='naam' placeholder="naam" required>
+        <form naam="add-menu-item" action="add-menu-item.php" method="POST">
 
-                <input class="style-input-add-item" type="text" name='text' placeholder="description" required>
+                <input class="style-input-add-item" type="text" name='name' placeholder="name" required>
 
-                <input type="file" name='file' placeholder="" required>
+                <textarea name='text' cols="30" rows="10" placeholder="description" required></textarea>
+                <!-- <input class="style-input-add-item" type="text"> -->
 
-                <div>
-                    <p>box item</p>
-                    <input  type="radio" name='test' placeholder="yes" required>
-                </div>
-                
-                <div>
-                    <p>normal sushi item</p>
-                    <input type="radio" name='test' placeholder="yes" required>
-                </div>
-                
-                <div>
-                    <p>luxe sushi item</p>
-                    <input type="radio" name='test' placeholder="yes" required>
-                </div>
+                <input class="style-input-add-item" type="number" name='price' placeholder="price" step="0.01" required>
 
-                <input type="submit" name='add-item' value="add-item">
+                <input type="file" name='file' >
+
+                <fieldset>
+                    <div>
+                        <input type="radio" id="boxen" name='item_type' value=1>
+                        <label for="boxen">New Box item</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sushi"  name='item_type' value=2>
+                        <label for="sushi">New sushi item</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="luxe" name='item_type' value=3>
+                        <label for="luxe">New Luxe Sushi item</label>
+                    </div>
+                </fieldset>
+
+                <input class="submit-button-add-new-item" type="submit" name='add-item' value="add-item">
 
             </form>
     </main>
