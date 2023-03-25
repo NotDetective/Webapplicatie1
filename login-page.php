@@ -21,13 +21,13 @@
             $stmt->execute(['username' => $username, 'password' => $password]); 
             $row = $stmt->fetch();
 
+            $_SESSION['username'] = $username;
+            
             if ($row['username'] == $username AND $row['password'] == $password) {
                 if ($row['roll'] < 10) {
+                    $_SESSION['user-roll'] = $row['roll'];
                     header("Location: backlog-pages/backlog.php");
                 }else{
-                    
-
-                    $_SESSION['username'] = $username;
                     header("Location: index.php");
                 }
             }

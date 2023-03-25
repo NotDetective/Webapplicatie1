@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header("Location: ../index.php");
+    }
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +29,12 @@
             <h1 class="header-name-admin">Atomic Sushi Admin</h1>
         </div>
         <nav>
-            <a href="">
+            <a href="../logout.php">
+                <button>
+                    <p>Log out</p>
+                </button>
+            </a>
+            <a href="add-menu-item-page.php">
                 <button>
                     <p>Add item</p>
                 </button>
@@ -44,7 +55,6 @@
                 <input class="style-input-add-item" type="text" name='name' placeholder="name" required>
 
                 <textarea name='text' cols="30" rows="10" placeholder="description" required></textarea>
-                <!-- <input class="style-input-add-item" type="text"> -->
 
                 <input class="style-input-add-item" type="number" name='price' placeholder="price" step="0.01" required>
 
@@ -60,8 +70,8 @@
                         <label for="sushi">New sushi item</label>
                     </div>
                     <div>
-                        <input type="radio" id="luxe" name='item_type' value=3>
-                        <label for="luxe">New Luxe Sushi item</label>
+                        <input type="radio" id="luxury" name='item_type' value=3>
+                        <label for="luxury">New luxury Sushi item</label>
                     </div>
                 </fieldset>
 

@@ -1,9 +1,10 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['username'])){
-        header("Location: ../index.php");
-    }
-?> 
+    require_once '../pages/conn.php';
+    $stmt = $conn->prepare("SELECT username, id, roll FROM user");
+
+            $stmt->execute(); 
+            $row = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,29 +27,25 @@
             </div>
             <h1 class="header-name-admin">Atomic Sushi Admin</h1>
         </div>
-        <nav>
-            <a href="../logout.php">
-                <button>
-                    <p>Log out</p>
-                </button>
-            </a>
-            <a href="add-menu-item-page.php">
-                <button>
-                    <p>Add item</p>
-                </button>
-            </a>
-            <?php if ($_SESSION['user-roll'] <= 4): ?>
+        <nav class="header-all-account">
+            
             <a href="manage-account.php">
                 <button>
-                    <p>manage account</p>
+                    <p> go back</p>
                 </button>
             </a>
-            <?php endif; ?> 
         </nav>
     </header>
     <main class="main-backlog">
-        <h1>backlog</h1>
-    </main>
+        <?php
+            foreach ($row AS $userdata){
+               if ($userdata['roll'] != 1) {
+                echo "<h1>" . 'id is: ' . $userdata['id']  . ' username is: ' . $userdata['username'] . "</h1>";
+               }
+            }
+        ?>
 
+        
+    </main>
 </body>
 </html>

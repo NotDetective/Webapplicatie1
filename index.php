@@ -70,9 +70,9 @@
                 </div>
             </a>
 
-            <a href="#hyperlink-menu-luxen-sushi">
+            <a href="#hyperlink-menu-luxury-sushi">
                 <div class="menu-type-food">
-                    <h1>Luxen Sushi</h1>
+                    <h1>luxury Sushi</h1>
                 </div>
             </a>
         </div>
@@ -140,8 +140,8 @@
         </section>
 
         <a href="#hyperlink-menu-top">
-            <div class="menu-type-food" id="hyperlink-menu-luxen-sushi">
-                <h1>Luxen Sushi</h1>
+            <div class="menu-type-food" id="hyperlink-menu-luxury-sushi">
+                <h1>luxury Sushi</h1>
             </div>
         </a>
 

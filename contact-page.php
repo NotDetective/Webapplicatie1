@@ -1,5 +1,5 @@
-<?php 
-    // section_start();
+<?php
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +30,7 @@
                     <p>Contact</p>
                 </button>
             </a>
-            <?php 
-            if (isset($_SESSION['username'])):?>
+            <?php if (isset($_SESSION['username'])):?>
             <a href="logout.php">
                 <button>
                     <p>log out</p>

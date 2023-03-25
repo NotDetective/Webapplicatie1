@@ -81,6 +81,14 @@ header nav a {
     width: 500px;
 }
 
+header.header-backlog nav{
+    width: 700px;
+}
+
+header nav.header-all-account{
+    width: 250px;
+}
+
 /* main index */
 
 .main-index {
@@ -223,8 +231,6 @@ form p{
 .login-or-registers-page section h1{
     font-size: xx-large;
 }
-    
-
 
 .confirm-message{
     color: red;
@@ -248,17 +254,19 @@ form p{
     color: black;
 }
 
+/* code for the backlog add item */
+
 .style-input-add-item{
     width: 300px;
     height: 50px;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 10px;
 }
 textarea{
     resize: none;
     width: 300px;
     height: 180px;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 10px;
 
 }
@@ -292,6 +300,68 @@ fieldset{
     width: 150px;
     height: 60px;
     background-color: #FFE4D3;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 20px;
+}
+
+/* code for menage account */
+
+.menage-account-section{
+    display: none;
+}
+
+.option-manage-account{
+    display: flex;
+    width: 600px;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option-manage-account input{
+    background-color: #FF0000;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: white;
+    height: 60px;
+    width: 200px;
+    font-size: 19px;
+}
+
+.menage-account-section form div{
+    background-color: white;
+    border: 5px solid black;
+    display: none;
+    position: absolute;
+    height: 200px;
+}
+
+.warning-delete-user h1{
+    position: relative;
+    left: 100px;
+}
+
+.warning-delete-user input{
+    position: relative;
+    left: 57px;
+}
+
+.menage-account-section form input{
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: 3px solid black;
+}
+
+.submit-button-delete-account{
+    background-color: red;
+    color: white;
+}
+
+.menage-account-section form{
+    height: 300px;
+}
+
+.menage-account-section a{
+    color: blue;
 }
