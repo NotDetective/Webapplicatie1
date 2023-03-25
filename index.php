@@ -35,7 +35,7 @@
         </div>
         <nav>
             <a href="contact-page.php">
-                <button>
+                <button class="test">
                     <p>Contact</p>
                 </button>
             </a>

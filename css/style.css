@@ -17,6 +17,14 @@ body {
     margin-top: 0px;
 }
 
+input{
+    transition: transform .2s;
+}
+
+input:hover{
+    transform: scale(1.05);
+}
+
 /* header code */
 
 header {
@@ -40,6 +48,7 @@ header div {
 
 header nav {
     width: 500px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,11 +61,16 @@ header div div {
     height: 172px;
     border-radius: 50%;
     border: 7px solid #000000;
+    transition: transform .2s;
 }
 
 header div div img {
     width: 172px;
     height: 172px;
+}
+
+header div div:hover{
+    transform: scale(1.05);
 }
 
 header nav a button {
@@ -70,6 +84,11 @@ header nav a button {
     align-items: center;
     justify-content: center;
     font-family: 'Atomic Age', cursive;
+    transition: transform .2s;
+}
+
+header nav a button:hover{
+    transform: scale(1.1);
 }
 
 header nav a {
@@ -111,6 +130,11 @@ main.main-index section {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .2s;
+}
+
+.menu-type-food:hover{
+    transform: scale(1.1);
 }
 
 .top-navigation-menu-index {
@@ -268,7 +292,12 @@ textarea{
     height: 180px;
     border: 3px solid black;
     border-radius: 10px;
+    transition: transform .2s;
 
+}
+
+textarea:hover{
+    transform: scale(1.05);
 }
 
 fieldset{
