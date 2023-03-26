@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header("Location: ../index.php");
+    }
     require_once '../pages/conn.php';
     $stmt = $conn->prepare("SELECT username, id, roll FROM user");
 
@@ -37,14 +41,30 @@
         </nav>
     </header>
     <main class="main-backlog">
+        <h1> Managers</h1>
         <?php
             foreach ($row AS $userdata){
-               if ($userdata['roll'] != 1) {
+               if ($userdata['roll'] == 4) {
                 echo "<h1>" . 'id is: ' . $userdata['id']  . ' username is: ' . $userdata['username'] . "</h1>";
                }
             }
         ?>
-
+        <h1>Employee</h1>
+        <?php
+            foreach ($row AS $userdata){
+               if ($userdata['roll'] == 7) {
+                echo "<h1>" . 'id is: ' . $userdata['id']  . ' username is: ' . $userdata['username'] . "</h1>";
+               }
+            }
+        ?>
+        <h1>Customers</h1>
+        <?php
+            foreach ($row AS $userdata){
+               if ($userdata['roll'] == 10) {
+                echo "<h1>" . 'id is: ' . $userdata['id']  . ' username is: ' . $userdata['username'] . "</h1>";
+               }
+            }
+        ?>
         
     </main>
 </body>

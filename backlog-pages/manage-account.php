@@ -39,11 +39,18 @@
                     <p>Add item</p>
                 </button>
             </a>
+            <?php if ($_SESSION['user-roll'] <= 4): ?>
+            <a href="manage-menu-item-page.php">
+                <button>
+                    <p>manage item</p>
+                </button>
+            </a>
             <a href="manage-account.php">
                 <button>
                     <p>manage account</p>
                 </button>
             </a>
+            <?php endif; ?> 
         </nav>
     </header>
     <main class="main-backlog">
