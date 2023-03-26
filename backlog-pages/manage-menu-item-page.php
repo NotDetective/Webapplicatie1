@@ -21,9 +21,11 @@
 <body>
 <header class="header-backlog">
         <div>
-            <div>
-                <img src="../img/icon-or-logo.png" alt="logo">
-            </div>
+            <a href="backlog.php">
+                <div>
+                    <img src="../img/icon-or-logo.png" alt="logo">
+                </div>
+            </a>
             <h1 class="header-name-admin">Atomic Sushi Admin</h1>
         </div>
         <nav>
@@ -40,7 +42,7 @@
             <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>
-                    <p>manage item</p>
+                    <p>Add item</p>
                 </button>
             </a>
             <a href="manage-account.php">

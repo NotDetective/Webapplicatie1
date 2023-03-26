@@ -47,7 +47,11 @@
         </nav>
     </header>
     <main class="main-backlog">
+
+    <h1 class="confirm-deleted-user"><?php echo  $_SESSION['confirm-deleted-user'];  $_SESSION['confirm-deleted-user'] = "" ?></h1>
+
         <div class="option-manage-account">
+
             <input type="button" name="button" value="edit account" onclick="switch_to_edit_account();">
 
             <?php if ($_SESSION['user-roll'] == 1):?>
@@ -60,6 +64,7 @@
         </section>
 
         <section class="menage-account-section" id="delete-account">
+                
             <h1>delete account</h1>
 
             <p>you need to put in the username and id of the user is you want to delete it.</p>
@@ -76,6 +81,9 @@
 
                 <div class="warning-delete-user" id="warning-delete-user">
                     <h1>!!warning!!</h1>
+                    <a href="">
+                        <h1>X</h1>
+                    </a>
                     <p>are you sure you want to delete this account</p>
                     <p>you can't recover any accounts</p>
                     <input class="submit-button-delete-account" type="submit" name='delete-account' value="yeah i am sure" >

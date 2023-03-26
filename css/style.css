@@ -101,7 +101,7 @@ header nav a {
 }
 
 header.header-backlog nav{
-    width: 700px;
+    width: auto;
 }
 
 header nav.header-all-account{
@@ -339,6 +339,10 @@ fieldset{
     display: none;
 }
 
+section.menage-account-section h1{
+    margin-left: 160px;
+}
+
 .option-manage-account{
     display: flex;
     width: 600px;
@@ -350,7 +354,7 @@ fieldset{
 .option-manage-account input{
     background-color: #FF0000;
     border: 3px solid black;
-    border-radius: 5px;
+    border-radius: 8px;
     color: white;
     height: 60px;
     width: 200px;
@@ -365,14 +369,27 @@ fieldset{
     height: 200px;
 }
 
-.warning-delete-user h1{
+section.menage-account-section div.warning-delete-user h1{
     position: relative;
-    left: 100px;
+    right: 60px;
+}
+
+.warning-delete-user p{
+    position: relative;
+    bottom: 40px;
 }
 
 .warning-delete-user input{
     position: relative;
     left: 57px;
+    bottom: 40px;
+}
+
+div.warning-delete-user a{
+    color: black;
+    position: relative;
+    left: 180px;
+    bottom: 54px;
 }
 
 .menage-account-section form input{

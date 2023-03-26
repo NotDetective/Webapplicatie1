@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php
+        session_start();
         require_once '../pages/conn.php';
 
         $username = $_POST['username'];
@@ -22,6 +23,10 @@
         $stmt ->execute(['username' => $username , 'id' => $id]);
         
         echo"user del";
+
+        $_SESSION['confirm-deleted-user'] = "user " . $username . " deleted";
+
+        header("Location : manage-account.php")
     ?>
 </body>
 </html>
