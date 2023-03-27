@@ -99,7 +99,40 @@
         </section>
         <section>
             <div class="menage-account-section" id="edit-account">
-                <h1>edit account</h1>
+                <div>
+                    <h1>edit account</h1>
+                    <div class="options-edit-account">
+                        <input type="button" value="edit account" onclick="myfunction();">
+                        <input type="button" value="edit permissions" onclick="myfunction();">
+                    </div>
+
+                    <div class="edit-account" id="edit-account">
+
+                    </div>
+
+                    <div class="edit-premissions" id="edit-premissions">
+                        <form naam="edit-premissions" action="edit-premissions.php" method="POST">
+                            <input type="number" name='id' placeholder="user id">
+                            <fieldset>
+                                <div>
+                                    <input type="radio" id="boxen" name='edit-roll' value=10>
+                                    <label for="boxen">Remove employee</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="boxen" name='edit-roll' value=7>
+                                    <label for="boxen">Add employee</label>
+                                </div>
+                                <?php if ($_SESSION['user-roll'] == 1): ?>
+                                <div>
+                                    <input type="radio" id="boxen" name='edit-roll' value=4>
+                                    <label for="boxen">Add Manager</label>
+                                </div>
+                                <?php endif; ?>
+                            </fieldset>
+                            <input type="submit" name='edit-premissions' value="submit" >
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <div class="menage-account-section" id="delete-account">
@@ -112,7 +145,7 @@
 
                     <form name="delete-account" action="delete-account.php" method="POST">
 
-                        <input type='id' name='id' placeholder="user id">
+                        <input type='number' name='id' placeholder="user id">
 
                         <input class="submit-button-delete-account" type="button" name="button" value="delete account" onclick="display_warning_delete_user();">
 

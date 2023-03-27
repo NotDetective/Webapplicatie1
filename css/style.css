@@ -335,6 +335,11 @@ fieldset{
 
 /* code for menage account */
 
+h1.confirm-deleted-user{
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
+
 main.main-backlog-manage-account{
     display: flex;
     justify-content: space-between;
@@ -451,4 +456,38 @@ div.warning-delete-user a{
 
 .show-all-users p{
     font-size: 20px;
+}
+
+/* edit premissions */
+
+div.options-edit-account{
+    display: flex;
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.options-edit-account input{
+    width: 110px;
+    height: 60px;
+}
+
+.edit-premissions fieldset{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.edit-premissions fieldset input{
+    height: 15px;
+}
+
+.edit-premissions fieldset div{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 200px;
+    position: unset;
+    border: none;
 }
