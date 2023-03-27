@@ -21,11 +21,19 @@
         $price = (double)$_POST['price'];
         $category = (int)$_POST['item_type'];
 
+        $data = [
+            'name' => $name,
+            'description' => $description,
+            'price' => $price,
+            'category' => $category,
+        ];
+        
         
         $sql = "INSERT INTO sushi (name, description, price, category) 
-        VALUES ('$name', '$description', $price ,$category)";
+        VALUES (:name, :description, :price , :category )";
         try {
-            $conn->exec($sql);
+            $stmt= $conn->prepare($sql);
+            $stmt->execute($data);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

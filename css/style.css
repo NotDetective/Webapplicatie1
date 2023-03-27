@@ -335,12 +335,19 @@ fieldset{
 
 /* code for menage account */
 
-.menage-account-section{
-    display: none;
+main.main-backlog-manage-account{
+    display: flex;
+    justify-content: space-between;
+    
 }
 
-section.menage-account-section h1{
-    margin-left: 160px;
+.main-backlog-manage-account h1 , .main-backlog-manage-account p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menage-account-section{
+    margin-right: 500px;
+    display: none;
 }
 
 .option-manage-account{
@@ -361,22 +368,37 @@ section.menage-account-section h1{
     font-size: 19px;
 }
 
+.menage-account-section div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+
+.text-area{
+    display: flex;
+    align-items: center;
+}
+
 .menage-account-section form div{
     background-color: white;
     border: 5px solid black;
     display: none;
     position: absolute;
     height: 200px;
+    right: 600px;
+    bottom: 200px;
 }
 
-section.menage-account-section div.warning-delete-user h1{
+div.menage-account-section div.warning-delete-user h1{
     position: relative;
-    right: 60px;
+    left: 90px;
 }
 
 .warning-delete-user p{
     position: relative;
     bottom: 40px;
+    color: #000000;
 }
 
 .warning-delete-user input{
@@ -402,12 +424,31 @@ div.warning-delete-user a{
 .submit-button-delete-account{
     background-color: red;
     color: white;
+    margin-left: 5px;
 }
 
 .menage-account-section form{
-    height: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.menage-account-section a{
-    color: blue;
+.selection-options-accounts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-all-users{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show-all-users p{
+    font-size: 20px;
 }

@@ -3,6 +3,11 @@
     if(!isset($_SESSION['username'])){
         header("Location: ../index.php");
     }
+    require_once '../pages/conn.php';
+    $stmt = $conn->prepare("SELECT username, id, roll FROM user");
+
+    $stmt->execute(); 
+    $row = $stmt->fetchAll();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,51 +58,80 @@
             <?php endif; ?> 
         </nav>
     </header>
-    <main class="main-backlog">
-
-    <h1 class="confirm-deleted-user"><?php echo  $_SESSION['confirm-deleted-user'];  $_SESSION['confirm-deleted-user'] = "" ?></h1>
-
+    <div class="selection-options-accounts">
+        <h1 class="confirm-deleted-user"><?php echo  $_SESSION['confirm-deleted-user'];  $_SESSION['confirm-deleted-user'] = "" ?></h1>
         <div class="option-manage-account">
-
             <input type="button" name="button" value="edit account" onclick="switch_to_edit_account();">
-
             <?php if ($_SESSION['user-roll'] == 1):?>
             <input type="button" name="button" value="delete account" onclick="switch_to_delete_account();">
             <?php endif; ?>
         </div>
-        
-        <section class="menage-account-section" id="edit-account">
-            <h1>edit account</h1>
+    </div>
+    <main class="main-backlog-manage-account">
+
+        <section>
+            <div class="show-all-users">
+                <h1> Managers</h1>
+                <?php
+                    foreach ($row AS $userdata){
+                    if ($userdata['roll'] == 4) {
+                        echo "<p>" . 'id of user '. $userdata['username'] . ' is ' . $userdata['id']. "</p>";
+                    }
+                    }
+                ?>
+                <h1>Employee</h1>
+                <?php
+                    foreach ($row AS $userdata){
+                    if ($userdata['roll'] == 7) {
+                        echo "<p>" . 'id of user '. $userdata['username'] . ' is ' . $userdata['id']. "</p>";
+                    }
+                    }
+                ?>
+                <h1>Customers</h1>
+                <?php
+                    foreach ($row AS $userdata){
+                    if ($userdata['roll'] == 10) {
+                        echo "<p>" . 'id of user '. $userdata['username'] . ' is ' . $userdata['id']. "</p>";
+                    }
+                    }
+                ?>
+            </div>
         </section>
+        <section>
+            <div class="menage-account-section" id="edit-account">
+                <h1>edit account</h1>
+            </div>
 
-        <section class="menage-account-section" id="delete-account">
-                
-            <h1>delete account</h1>
+            <div class="menage-account-section" id="delete-account">
+                <div>
+                    <div class="text-area">
+                        <h1>delete account</h1>
+                        <p>you need to put in the username and id of the user is you want to delete it.</p>
+                        <p>warning there is not recover option for deleted users.</p>
+                    </div>
 
-            <p>you need to put in the username and id of the user is you want to delete it.</p>
-            <p>warning there is not recover option for deleted users.</p>
-            <p>dont know the username or id? <a href="show-all-account.php">click here</a> this can take a lot of time.</p>
+                    <form name="delete-account" action="delete-account.php" method="POST">
 
-            <form name="delete-account" action="delete-account.php" method="POST">
+                        <input type='id' name='id' placeholder="user id">
 
-                <input type='username' name='username' placeholder="username">
+                        <input class="submit-button-delete-account" type="button" name="button" value="delete account" onclick="display_warning_delete_user();">
 
-                <input type='id' name='id' placeholder="user id">
+                        <div class="warning-delete-user" id="warning-delete-user">
+                            <h1>!!warning!!</h1>
+                            <a href="">
+                                <h1>X</h1>
+                            </a>
+                            <p>are you sure you want to delete this account</p>
+                            <p>you can't recover any accounts</p>
+                            <input class="submit-button-delete-account" type="submit" name='delete-account' value="yeah i am sure" >
+                        </div>
 
-                <input class="submit-button-delete-account" type="button" name="button" value="delete account" onclick="display_warning_delete_user();">
-
-                <div class="warning-delete-user" id="warning-delete-user">
-                    <h1>!!warning!!</h1>
-                    <a href="">
-                        <h1>X</h1>
-                    </a>
-                    <p>are you sure you want to delete this account</p>
-                    <p>you can't recover any accounts</p>
-                    <input class="submit-button-delete-account" type="submit" name='delete-account' value="yeah i am sure" >
+                    </form>
                 </div>
-
-            </form>
+            </div>
         </section>
+
+        
 
     </main>
 

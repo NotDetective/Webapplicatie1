@@ -11,20 +11,17 @@
         session_start();
         require_once '../pages/conn.php';
 
-        $username = $_POST['username'];
-
         $id = (int)$_POST['id'];
 
-        echo $username . "<br>" ;
         echo $id . "<br>" ;
 
-        $stmt = $conn->prepare("DELETE FROM user WHERE username=:username AND id=:id");
+        $stmt = $conn->prepare("DELETE FROM user WHERE id=:id");
 
-        $stmt ->execute(['username' => $username , 'id' => $id]);
+        $stmt ->execute(['id' => $id]);
         
         echo"user del";
 
-        $_SESSION['confirm-deleted-user'] = "user " . $username . " deleted";
+        $_SESSION['confirm-deleted-user'] = "user deleted";
 
         header("Location : manage-account.php")
     ?>

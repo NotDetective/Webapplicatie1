@@ -42,7 +42,7 @@
             <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>
-                    <p>Add item</p>
+                    <p>manage item</p>
                 </button>
             </a>
             <a href="manage-account.php">
@@ -54,7 +54,7 @@
         </nav>
     </header>
     <main class="main-backlog">
-        <h1>backlog</h1>
+        <h1>manage menu</h1>
     </main>
 
 </body>
