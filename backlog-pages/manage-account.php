@@ -102,12 +102,20 @@
                 <div>
                     <h1>edit account</h1>
                     <div class="options-edit-account">
-                        <input type="button" value="edit account" onclick="myfunction();">
+                        <input type="button" value="edit account" onclick="display_edit_account();">
                         <input type="button" value="edit permissions" onclick="display_edit_premissions();">
                     </div>
 
-                    <div class="edit-account" id="edit-account">
+                    <div class="edit-account" id="edit-account-input">
+                        <p> <font color=red><?php echo $_SESSION['error-edit-account']; $_SESSION['error-edit-account'] =""; ?>  </font></p>
+                        <form name="edit-account" action="edit-account.php" method="POST">
+                            <input type="number" name='id' placeholder='user id'>
 
+                            <input type="username" name="username" placeholder="New username">
+                            <input type="text" name="password" placeholder="New password">
+
+                            <input class="submit-input-edit-premissions" type="submit" name='edit-premissions' value="submit" >
+                        </form>
                     </div>
 
                     <div class="edit-premissions" id="edit-premissions">
@@ -187,6 +195,12 @@
 
     function display_edit_premissions() {
         document.getElementById("edit-premissions").style.display = "block"; 
+        document.getElementById("edit-account-input").style.display = "none";
+    }
+
+    function display_edit_account() {
+        document.getElementById("edit-premissions").style.display = "none"; 
+        document.getElementById("edit-account-input").style.display = "block";
     }
 
 </script>

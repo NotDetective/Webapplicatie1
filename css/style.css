@@ -501,10 +501,12 @@ div.edit-premissions{
 
 input.submit-input-edit-premissions{
     width: 100px;
-    height: 50px;
+    height: 25px;
     background-color: #FF8A98;
 }
 
+/* edit account */
+
 div.edit-account{
-    display: block;
+    display: none;
 }

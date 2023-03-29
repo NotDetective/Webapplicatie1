@@ -22,7 +22,7 @@
         $sql = "UPDATE user SET roll=:roll WHERE id=:id";
         $stmt = $conn->prepare($sql);
         echo "conn \n";
-        var_dump($stmt->execute($data));
+        $stmt->execute($data);
         echo "user edit";
         header("Location: manage-account.php");
 
