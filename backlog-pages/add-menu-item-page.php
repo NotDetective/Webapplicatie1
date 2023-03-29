@@ -55,6 +55,8 @@
     </header>
     <main class="main-backlog">
 
+                
+        <h1> <font color=red><?php echo $_SESSION['menu-item-added'];  $_SESSION['menu-item-added'] ="";?> </font> </h1>
         <h1>Add new item</h1>
 
         <form naam="add-menu-item" action="add-menu-item.php" method="POST">

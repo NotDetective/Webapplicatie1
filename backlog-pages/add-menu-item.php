@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php
+        session_start();
         require_once '../pages/conn.php';
         echo "start <br>";
 
@@ -40,10 +41,11 @@
          echo "new record created";
 
         echo "end";
+
+        $_SESSION['menu-item-added'] ="New menu item was added";
+
+        header("Location: add-menu-item-page.php")
     ?>  
 
-    <a href="add-menu-item-page.php">
-        <button>back</button>
-    </a>
 </body>
 </html>

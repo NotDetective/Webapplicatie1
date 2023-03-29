@@ -103,7 +103,7 @@
                     <h1>edit account</h1>
                     <div class="options-edit-account">
                         <input type="button" value="edit account" onclick="myfunction();">
-                        <input type="button" value="edit permissions" onclick="myfunction();">
+                        <input type="button" value="edit permissions" onclick="display_edit_premissions();">
                     </div>
 
                     <div class="edit-account" id="edit-account">
@@ -111,27 +111,28 @@
                     </div>
 
                     <div class="edit-premissions" id="edit-premissions">
-                        <form naam="edit-premissions" action="edit-premissions.php" method="POST">
-                            <input type="number" name='id' placeholder="user id">
+                        <form class="edit-premission-form" naam="edit-premissions" action="edit-premissions.php" method="POST">
+                            <input type="number" name='id' placeholder="user id" required>
                             <fieldset>
                                 <div>
-                                    <input type="radio" id="boxen" name='edit-roll' value=10>
+                                    <input type="radio" id="boxen" name='edit-roll' value=10 required>
                                     <label for="boxen">Remove employee</label>
                                 </div>
                                 <div>
-                                    <input type="radio" id="boxen" name='edit-roll' value=7>
+                                    <input type="radio" id="boxen" name='edit-roll' value=7 required>
                                     <label for="boxen">Add employee</label>
                                 </div>
                                 <?php if ($_SESSION['user-roll'] == 1): ?>
                                 <div>
-                                    <input type="radio" id="boxen" name='edit-roll' value=4>
+                                    <input type="radio" id="boxen" name='edit-roll' value=4 required>
                                     <label for="boxen">Add Manager</label>
                                 </div>
                                 <?php endif; ?>
                             </fieldset>
-                            <input type="submit" name='edit-premissions' value="submit" >
+                            <input class="submit-input-edit-premissions" type="submit" name='edit-premissions' value="submit" >
                         </form>
                     </div>
+
                 </div>
             </div>
 
@@ -182,6 +183,10 @@
 
     function display_warning_delete_user() {
         document.getElementById("warning-delete-user").style.display = "block";
+    }
+
+    function display_edit_premissions() {
+        document.getElementById("edit-premissions").style.display = "block"; 
     }
 
 </script>

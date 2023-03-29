@@ -10,12 +10,21 @@
     <?php
         require_once  '../pages/conn.php';
 
+        $roll = (int)$_POST['edit-roll'];
+
+        $id = (int)$_POST['id'];
+
         $data = [
             'roll' => $roll,
+            'id' => $id,
         ];
+
         $sql = "UPDATE user SET roll=:roll WHERE id=:id";
-        $stmt= $pdo->prepare($sql);
-        $stmt->execute($data);
+        $stmt = $conn->prepare($sql);
+        echo "conn \n";
+        var_dump($stmt->execute($data));
+        echo "user edit";
+        header("Location: manage-account.php");
 
 
 
