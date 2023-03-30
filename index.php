@@ -39,8 +39,14 @@
                     <p>Contact</p>
                 </button>
             </a>
-            <?php 
-            if (isset($_SESSION['username'])):?>
+            <?php if (isset($_SESSION['user-roll']) && $_SESSION['user-roll'] <= 9 ):?>
+            <a href="backlog-pages/backlog.php">
+                <button>
+                    <p>home admin</p>
+                </button>
+            </a>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['username'])):?>
             <a href="logout.php">
                 <button>
                     <p>log out</p>

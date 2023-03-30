@@ -34,6 +34,11 @@
                     <p>Log out</p>
                 </button>
             </a>
+            <a href="../index.php">
+                <button>
+                    <p>Home</p>
+                </button>
+            </a>
             <a href="add-menu-item-page.php">
                 <button>
                     <p>Add item</p>
