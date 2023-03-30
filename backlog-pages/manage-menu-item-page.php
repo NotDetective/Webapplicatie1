@@ -3,6 +3,12 @@
     if(!isset($_SESSION['username'])){
         header("Location: ../index.php");
     }
+
+    require_once '../pages/conn.php';
+
+    $stmt = $conn->prepare("SELECT * FROM sushi");
+    $stmt->execute(); 
+    $products_sushi = $stmt->fetchAll();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +66,11 @@
     </header>
     <main class="main-backlog">
         <h1>manage menu</h1>
+        <?php
+            foreach ($products_sushi AS $product){
+                        
+            }
+        ?>
     </main>
 
 </body>

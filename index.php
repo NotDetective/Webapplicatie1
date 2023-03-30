@@ -2,8 +2,7 @@
     session_start();
     require_once 'pages/conn.php';
 
-    $stmt = $conn->prepare("SELECT * FROM sushi");
-
+    $stmt = $conn->prepare("SELECT name, description, image, price, category FROM sushi");
     $stmt->execute(); 
     $products_sushi = $stmt->fetchAll();
 ?>
