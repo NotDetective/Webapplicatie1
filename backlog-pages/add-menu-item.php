@@ -13,37 +13,48 @@
             header("Location: ../index.php");
         }
         require_once '../pages/conn.php';
-        echo "start <br>";
 
         if (isset($_POST['item_type'])) {
         }else{
             header("Location: add-menu-item-page.php");
         }
 
-        $name = $_POST['name']; 
-        $description = $_POST['text'];
-        $price = (double)$_POST['price'];
-        $category = (int)$_POST['item_type'];
+        $target = "../upload-images/".basename($_FILES['image']['name']);
+        
+        $image = $_FILES['image']['name'];
+        
+        if (isset($image)) {
 
-        $data = [
-            'name' => $name,
-            'description' => $description,
-            'price' => $price,
-            'category' => $category,
-        ];
-        
-        
-        $sql = "INSERT INTO sushi (name, description, price, category) 
-        VALUES (:name, :description, :price , :category )";
-        try {
-            $stmt= $conn->prepare($sql);
-            $stmt->execute($data);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+            $name = $_POST['name']; 
+            $description = $_POST['text'];
+            $price = (double)$_POST['price'];
+            $category = (int)$_POST['item_type'];
+            
+            $data = [
+                'name' => $name,
+                'description' => $description,
+                'price' => $price,
+                'image' => $image,
+                'category' => $category,
+            ];
+            
+            
+            $sql = "INSERT INTO sushi (name, description, price, image,  category) 
+            VALUES (:name, :description, :price ,:image , :category )";
+            try {
+                $stmt= $conn->prepare($sql);
+                $stmt->execute($data);
+            } catch (PDOException $e) {
+                echo $e->getMessage()."<br>";
+            }
+
         }
-         echo "new record created";
 
-        echo "end";
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+            echo "Image Uploaded";
+        }else{
+            echo "Not uploaded" ; 
+        }
 
         $_SESSION['menu-item-added'] ="New menu item was added";
 

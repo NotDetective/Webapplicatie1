@@ -96,7 +96,7 @@
                             echo"
                             <div>
                                 <h1>".$row['name']."</h1>
-                                <img src='".$row['image']."' alt='img_product'>
+                                <img src='upload-images/".$row['image']."' alt='img_product'>
                                 <p>".$row['description']."</p>
                                 <div>
                                     <span></span>

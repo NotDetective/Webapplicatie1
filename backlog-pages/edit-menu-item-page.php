@@ -41,7 +41,7 @@
     ?>
 
     <main class="main-backlog">
-        <form class="edit-item-form" naam="edit-menu-item" action="edit-menu-item-page.php" method="POST">
+        <form class="edit-item-form" naam="edit-menu-item" action="edit-menu-item-page.php" method="POST" enctype="multipart/form-data">
 
         <input class="style-input-add-item" type="text" name='name' value="<?php echo $row['name']; ?>" required>
 
@@ -49,7 +49,7 @@
 
         <input class="style-input-add-item" type="number" name='price' value="<?php echo $row['price']; ?>" step="0.01" required>
 
-        <input type="file" name='file' >
+        <input type="file" name="image">
 
         <fieldset>
             <div>
@@ -76,6 +76,12 @@
     <?php
     if (isset($_POST['update-item'])) {
 
+        var_dump($_FILES['image']['name']);
+
+        $target = "../upload-images/".basename($_FILES['image']['name']);
+        
+        $image = $_FILES['image']['name'];
+
         $name = $_POST['name'];
         $description = $_POST['text'];
         $price = (double)$_POST['price'];
@@ -87,17 +93,25 @@
             'description' => $description,
             'price' => $price,
             'category' => $category,
+            'image' => $image,
             'id' => $id,
         ];
 
         try {
-            $sql = "UPDATE sushi SET name=:name, description=:description, price=:price , category=:category 
+            $sql = "UPDATE sushi SET name=:name, description=:description, price=:price, image=:image , category=:category 
             WHERE id=:id";
-            echo  "1" ;
+            
             $stmt = $conn->prepare($sql);
-            echo  "2" ;
+            
             $stmt->execute($data);
-            echo  "3" ;
+            
+
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+                echo "Image Uploaded";
+            }else{
+                echo "Not uploaded" ; 
+            }
+
             header("Location: manage-menu-item-page.php");
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();

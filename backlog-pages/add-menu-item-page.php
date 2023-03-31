@@ -64,7 +64,7 @@
         <h1> <font color=red><?php echo $_SESSION['menu-item-added'];  $_SESSION['menu-item-added'] ="";?> </font> </h1>
         <h1>Add new item</h1>
 
-        <form naam="add-menu-item" action="add-menu-item.php" method="POST">
+        <form naam="add-menu-item" action="add-menu-item.php" method="POST" enctype="multipart/form-data">
 
                 <input class="style-input-add-item" type="text" name='name' placeholder="name" required>
 
@@ -72,7 +72,7 @@
 
                 <input class="style-input-add-item" type="number" name='price' placeholder="price" step="0.01" required>
 
-                <input type="file" name='file' >
+                <input type="file" name="image">
 
                 <fieldset>
                     <div>
