@@ -90,7 +90,7 @@
                             <p> category : ". $category ."<p>
                         </div>
                         <div class='menu-items-edit-options'>
-                                <a href=''>
+                                <a href='edit-menu-item-page.php?id=".$row['id']."'>
                                     <p>edit item</p>
                                 </a>
                                 <a href='delete-menu-item.php?id=".$row['id']."'>

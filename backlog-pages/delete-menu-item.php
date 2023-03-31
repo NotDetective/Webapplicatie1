@@ -8,7 +8,10 @@
 </head>
 <body>
     <?php
-       
+       session_start();
+        if(!isset($_SESSION['username']) && $_SESSION['user-roll'] <= 4){
+            header("Location: ../index.php");
+        }
        require_once '../pages/conn.php';
 
        $id =  (int)$_GET['id'];

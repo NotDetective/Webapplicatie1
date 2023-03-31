@@ -559,3 +559,15 @@ div.edit-account{
     justify-content: space-between;
     text-decoration: underline;
 }
+
+/* edit item page */
+
+.edit-item-form{
+ margin-top: 60px;
+}
+
+.hidden-input{
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+}

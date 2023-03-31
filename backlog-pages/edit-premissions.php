@@ -8,6 +8,11 @@
 </head>
 <body>
     <?php
+        session_start();
+        if(!isset($_SESSION['username']) && $_SESSION['user-roll'] == 1){
+            header("Location: ../index.php");
+        }
+
         require_once  '../pages/conn.php';
 
         $roll = (int)$_POST['edit-roll'];
