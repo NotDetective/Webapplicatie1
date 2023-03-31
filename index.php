@@ -89,19 +89,18 @@
         </a>
 
         <section>
-
             <div class="menu-items">
                 <?php
-                    foreach ($products_sushi AS $product){
-                        if  ($product['category'] == 1){
+                    foreach ($products_sushi AS $row){
+                        if  ($row['category'] == 1){
                             echo"
                             <div>
-                                <h1>".$product['name']."</h1>
-                                <img src='".$product['image']."' alt='img_product'>
-                                <p>".$product['description']."</p>
+                                <h1>".$row['name']."</h1>
+                                <img src='".$row['image']."' alt='img_product'>
+                                <p>".$row['description']."</p>
                                 <div>
                                     <span></span>
-                                    <p>€".$product['price']."</p>
+                                    <p>€".$row['price']."</p>
                                     <h1>+</h1>
                                 </div>
                             </div>
@@ -110,7 +109,6 @@
                     }
                 ?>
             </div>
-
         </section>
 
         <a href="#hyperlink-menu-top">

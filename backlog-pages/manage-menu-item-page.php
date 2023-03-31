@@ -66,11 +66,45 @@
     </header>
     <main class="main-backlog">
         <h1>manage menu</h1>
+        <section class="edit-menu-page">
         <?php
-            foreach ($products_sushi AS $product){
-                        
+            foreach ($products_sushi AS $row){
+
+                $category = null; 
+                if($row['category'] == 1 ){
+                    $category = "box item";
+                }elseif($row['category'] == 2 ){
+                    $category = "normal sushi item";
+                }elseif ($row['category'] == 3 ) {
+                    $category = "luxury sushi item";
+                }
+            
+                echo"
+                    <div class='menu-item-display'>
+                        <div class='small-info-menu-item'>
+                            <h1>".$row['name']."</h1>
+                        </div>
+                        <div class='more-info-menu-item'>
+                            <p> description : ".$row['description']."</p>
+                            <p> Price : €".$row['price']."</p>
+                            <p> category : ". $category ."<p>
+                        </div>
+                        <div class='menu-items-edit-options'>
+                                <a href=''>
+                                    <p>edit item</p>
+                                </a>
+                                <a href=''>
+                                    <p>delete item</p>
+                                </a>
+                        </div>
+                    </div>
+                ";   
             }
         ?>
+        </section>
+
+                
+        
     </main>
 
 </body>

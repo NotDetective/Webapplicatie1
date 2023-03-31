@@ -447,6 +447,8 @@ div.warning-delete-user a{
 }
 
 .show-all-users{
+    width: 250px;
+    height: 500px;
     margin-left: 50px;
     display: flex;
     flex-direction: column;
@@ -510,4 +512,50 @@ input.submit-input-edit-premissions{
 
 div.edit-account{
     display: none;
+}
+
+/* edit menu-page */
+
+.edit-menu-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.edit-menu-page p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-item-display{
+    width: 400px;
+    height: 300px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-info-menu-item{
+    width: 300px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.small-info-menu-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-items-edit-options{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    text-decoration: underline;
 }
