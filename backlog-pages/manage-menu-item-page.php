@@ -93,7 +93,7 @@
                                 <a href=''>
                                     <p>edit item</p>
                                 </a>
-                                <a href=''>
+                                <a href='delete-menu-item.php?id=".$row['id']."'>
                                     <p>delete item</p>
                                 </a>
                         </div>
