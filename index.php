@@ -126,7 +126,7 @@
                             echo"
                             <div>
                                 <h1>".$product['name']."</h1>
-                                <img src='".$product['image']."' alt='img_product'>
+                                <img src='upload-images/".$row['image']."' alt='img_product'>
                                 <p>".$product['description']."</p>
                                 <div>
                                     <span></span>
@@ -157,7 +157,7 @@
                             echo"
                             <div>
                                 <h1>".$product['name']."</h1>
-                                <img src='".$product['image']."' alt='img_product'>
+                                <img src='upload-images/".$row['image']."' alt='img_product'>
                                 <p>".$product['description']."</p>
                                 <div>
                                     <span></span>
