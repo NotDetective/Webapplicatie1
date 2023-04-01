@@ -8,7 +8,7 @@
 
     $stmt = $conn->prepare("SELECT * FROM sushi");
     $stmt->execute(); 
-    $products_sushi = $stmt->fetchAll();
+    $products = $stmt->fetchAll();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +68,7 @@
         <h1>manage menu</h1>
         <section class="edit-menu-page">
         <?php
-            foreach ($products_sushi AS $row){
+            foreach ($products AS $row){
 
                 $category = null; 
                 if($row['category'] == 1 ){

@@ -4,7 +4,7 @@
 
     $stmt = $conn->prepare("SELECT name, description, image, price, category FROM sushi");
     $stmt->execute(); 
-    $products_sushi = $stmt->fetchAll();
+    $products = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +91,7 @@
         <section>
             <div class="menu-items">
                 <?php
-                    foreach ($products_sushi AS $row){
+                    foreach ($products AS $row){
                         if  ($row['category'] == 1){
                             echo"
                             <div>
@@ -121,16 +121,16 @@
 
             <div class="menu-items">
                 <?php
-                    foreach ($products_sushi AS $product){
-                        if  ($product['category'] == 2){
+                    foreach ($products AS $row){
+                        if  ($row['category'] == 2){
                             echo"
                             <div>
-                                <h1>".$product['name']."</h1>
+                                <h1>".$row['name']."</h1>
                                 <img src='upload-images/".$row['image']."' alt='img_product'>
-                                <p>".$product['description']."</p>
+                                <p>".$row['description']."</p>
                                 <div>
                                     <span></span>
-                                    <p>€".$product['price']."</p>
+                                    <p>€".$row['price']."</p>
                                     <h1>+</h1>
                                 </div>
                             </div>
@@ -152,16 +152,16 @@
 
             <div class="menu-items">
                 <?php
-                    foreach ($products_sushi AS $product){
-                        if  ($product['category'] == 3){
+                    foreach ($products AS $row){
+                        if  ($row['category'] == 3){
                             echo"
                             <div>
-                                <h1>".$product['name']."</h1>
+                                <h1>".$row['name']."</h1>
                                 <img src='upload-images/".$row['image']."' alt='img_product'>
-                                <p>".$product['description']."</p>
+                                <p>".$row['description']."</p>
                                 <div>
                                     <span></span>
-                                    <p>€" .$product['price']."</p>
+                                    <p>€" .$row['price']."</p>
                                     <h1>+</h1>
                                 </div>
                             </div>
