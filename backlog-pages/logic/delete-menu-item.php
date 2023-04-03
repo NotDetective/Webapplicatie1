@@ -10,9 +10,9 @@
     <?php
        session_start();
         if(!isset($_SESSION['username']) && $_SESSION['user-roll'] <= 4){
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
         }
-       require_once '../pages/conn.php';
+       require_once '../../pages/conn.php';
 
        $id =  (int)$_GET['id'];
 
@@ -24,7 +24,7 @@
        
        echo"sushi del";
 
-       header("Location : manage-menu-item-page.php")
+       header("Location : ../manage-menu-item-page.php")
 
     ?>
 </body>

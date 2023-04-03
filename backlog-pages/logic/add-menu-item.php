@@ -10,13 +10,13 @@
     <?php
         session_start();
         if(!isset($_SESSION['username']) && $_SESSION['user-roll'] <= 4){
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
         }
-        require_once '../pages/conn.php';
+        require_once '../../pages/conn.php';
 
         if (isset($_POST['item_type'])) {
         }else{
-            header("Location: add-menu-item-page.php");
+            header("Location: ../manage-menu-item-page.php");
         }
 
         $target = "../upload-images/".basename($_FILES['image']['name']);
@@ -58,7 +58,7 @@
 
         $_SESSION['menu-item-added'] ="New menu item was added";
 
-        header("Location: add-menu-item-page.php")
+        header("Location: ../manage-menu-item-page.php")
     ?>  
 
 </body>

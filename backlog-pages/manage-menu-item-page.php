@@ -6,7 +6,7 @@
 
     require_once '../pages/conn.php';
 
-    $stmt = $conn->prepare("SELECT * FROM sushi");
+    $stmt = $conn->prepare("SELECT * FROM sushi ORDER BY id DESC");
     $stmt->execute(); 
     $products = $stmt->fetchAll();
 ?> 
@@ -45,11 +45,6 @@
                     <p>Home</p>
                 </button>
             </a>
-            <a href="add-menu-item-page.php">
-                <button>
-                    <p>Add item</p>
-                </button>
-            </a>
             <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>
@@ -64,8 +59,43 @@
             <?php endif; ?> 
         </nav>
     </header>
-    <main class="main-backlog">
-        <h1>manage menu</h1>
+    <main class="main-backlog-menage-item">
+        <section>
+            
+
+            <form class="add-menu-item-form" naam="add-menu-item" action="../backlog-pages/logic/add-menu-item.php" method="POST" enctype="multipart/form-data">
+
+            <h1> <font color=red><?php echo $_SESSION['menu-item-added'];  $_SESSION['menu-item-added'] ="";?> </font> </h1>
+
+                    <h1>add menu item</h1>
+
+                    <input class="style-input-add-item" type="text" name='name' placeholder="name" required>
+
+                    <textarea name='text' cols="30" rows="10" placeholder="description" required></textarea>
+
+                    <input class="style-input-add-item" type="number" name='price' placeholder="price" step="0.01" required>
+
+                    <input type="file" name="image">
+
+                    <fieldset>
+                        <div>
+                            <input type="radio" id="boxen" name='item_type' value=1>
+                            <label for="boxen">New Box item</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="sushi"  name='item_type' value=2>
+                            <label for="sushi">New sushi item</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="luxury" name='item_type' value=3>
+                            <label for="luxury">New luxury Sushi item</label>
+                        </div>
+                    </fieldset>
+
+                    <input class="submit-button-add-new-item" type="submit" name='add-item' value="add-item">
+
+                </form>
+        </section>
         <section class="edit-menu-page">
         <?php
             foreach ($products AS $row){
@@ -93,7 +123,7 @@
                                 <a href='edit-menu-item-page.php?id=".$row['id']."'>
                                     <p>edit item</p>
                                 </a>
-                                <a href='delete-menu-item.php?id=".$row['id']."'>
+                                <a href='../backlog-pages/logic/delete-menu-item.php?id=".$row['id']."'>
                                     <p>delete item</p>
                                 </a>
                         </div>
@@ -102,9 +132,6 @@
             }
         ?>
         </section>
-
-                
-        
     </main>
 
 </body>

@@ -37,11 +37,6 @@
                     <p>Home</p>
                 </button>
             </a>
-            <a href="add-menu-item-page.php">
-                <button>
-                    <p>Add item</p>
-                </button>
-            </a>
             <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>

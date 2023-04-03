@@ -41,7 +41,7 @@
     ?>
 
     <main class="main-backlog">
-        <form class="edit-item-form" naam="edit-menu-item" action="edit-menu-item-page.php" method="POST" enctype="multipart/form-data">
+        <form class="edit-item-form" naam="edit-menu-item" action="../backlog-pages/edit-menu-item-page.php" method="POST" enctype="multipart/form-data">
 
         <input class="style-input-add-item" type="text" name='name' value="<?php echo $row['name']; ?>" required>
 

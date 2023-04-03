@@ -516,11 +516,26 @@ div.edit-account{
 
 /* edit menu-page */
 
+.main-backlog-menage-item{
+    display: flex;
+
+}
+
+.add-menu-item-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+}
+
 .edit-menu-page{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    overflow-y: scroll;
+    height: 600px;
 }
 
 .edit-menu-page p{

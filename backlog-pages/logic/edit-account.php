@@ -11,10 +11,10 @@
     
         session_start();
         if(!isset($_SESSION['username']) && $_SESSION['user-roll'] <= 4){
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
         }
 
-        require_once  '../pages/conn.php';
+        require_once  '../../pages/conn.php';
         
         $username = $_POST['username'];
 
@@ -29,11 +29,11 @@
 
         if (strpos($username, " ") !== false) {
             $_SESSION['error-edit-account'] = "username can't contain a space";
-            header("Location: manage-account.php");
+            header("Location: ../manage-account.php");
         }
         else if (strpos($password, " ") !== false) {
             $_SESSION['error-edit-account'] = "password can't contain a space";
-            header("Location: manage-account.php");
+            header("Location: ../manage-account.php");
         }else{
             if ($_POST['id'] == $row['id']) {
                 if (isset($_POST['username'])) {
@@ -56,10 +56,10 @@
                 $sql = "UPDATE user SET username=:username, password=:password WHERE id=:id";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute($data);
-                header("Location: manage-account.php");
+                header("Location: ../manage-account.php");
             }else{
                 $_SESSION['error-edit-account'] = "there is no account with this id";
-                header("Location: manage-account.php");
+                header("Location: ../manage-account.php");
             }
         }
 

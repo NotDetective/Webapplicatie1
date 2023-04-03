@@ -44,11 +44,6 @@
                     <p>Home</p>
                 </button>
             </a>
-            <a href="add-menu-item-page.php">
-                <button>
-                    <p>Add item</p>
-                </button>
-            </a>
             <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>
@@ -113,7 +108,7 @@
 
                     <div class="edit-account" id="edit-account-input">
                         <p> <font color=red><?php echo $_SESSION['error-edit-account']; $_SESSION['error-edit-account'] =""; ?>  </font></p>
-                        <form name="edit-account" action="edit-account.php" method="POST">
+                        <form name="edit-account" action="../backlog-pages/logic/edit-account.php" method="POST">
                             <input type="number" name='id' placeholder='user id'>
 
                             <input type="username" name="username" placeholder="New username">
@@ -124,7 +119,7 @@
                     </div>
 
                     <div class="edit-premissions" id="edit-premissions">
-                        <form class="edit-premission-form" naam="edit-premissions" action="edit-premissions.php" method="POST">
+                        <form class="edit-premission-form" naam="edit-premissions" action="../backlog-pages/logic/edit-premissions.php" method="POST">
                             <input type="number" name='id' placeholder="user id" required>
                             <fieldset>
                                 <div>
@@ -157,7 +152,7 @@
                         <p>warning there is not recover option for deleted users.</p>
                     </div>
 
-                    <form name="delete-account" action="delete-account.php" method="POST">
+                    <form name="delete-account" action="../backlog-pages/logic/delete-account.php" method="POST">
 
                         <input type='number' name='id' placeholder="user id">
 
@@ -195,6 +190,7 @@
     }
 
     function display_warning_delete_user() {
+        // alert('weet je dit zeker?') new 
         document.getElementById("warning-delete-user").style.display = "block";
     }
 

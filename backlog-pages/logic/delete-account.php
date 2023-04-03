@@ -7,12 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>delete account</h1>
     <?php
         session_start();
         if(!isset($_SESSION['username']) && $_SESSION['user-roll'] <= 4){
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
         }
-        require_once '../pages/conn.php';
+
+        require_once '../../pages/conn.php';
 
         $id = (int)$_POST['id'];
 
@@ -26,7 +28,7 @@
 
         $_SESSION['confirm-deleted-user'] = "user deleted";
 
-        header("Location : manage-account.php")
+        header("Location : ../manage-account.php")
     ?>
 </body>
 </html>

@@ -10,10 +10,10 @@
     <?php
         session_start();
         if(!isset($_SESSION['username']) && $_SESSION['user-roll'] == 1){
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
         }
 
-        require_once  '../pages/conn.php';
+        require_once  '../../pages/conn.php';
 
         $roll = (int)$_POST['edit-roll'];
 
@@ -29,7 +29,7 @@
         echo "conn \n";
         $stmt->execute($data);
         echo "user edit";
-        header("Location: manage-account.php");
+        header("Location: ../manage-account.php");
 
 
 
