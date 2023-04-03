@@ -341,36 +341,14 @@ h1.confirm-deleted-user{
 }
 
 main.main-backlog-manage-account{
+    margin-top: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
 }
 
 .main-backlog-manage-account h1 , .main-backlog-manage-account p{
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.menage-account-section{
-    margin-right: 500px;
-    display: none;
-}
-
-.option-manage-account{
-    display: flex;
-    width: 600px;
-    height: 100px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.option-manage-account input{
-    background-color: #FF0000;
-    border: 3px solid black;
-    border-radius: 8px;
-    color: white;
-    height: 60px;
-    width: 200px;
-    font-size: 19px;
 }
 
 .menage-account-section div{
@@ -382,59 +360,6 @@ main.main-backlog-manage-account{
 
 .text-area{
     display: flex;
-    align-items: center;
-}
-
-.menage-account-section form div{
-    background-color: white;
-    border: 5px solid black;
-    display: none;
-    position: absolute;
-    height: 200px;
-    right: 600px;
-    bottom: 200px;
-}
-
-div.menage-account-section div.warning-delete-user h1{
-    position: relative;
-    left: 90px;
-}
-
-.warning-delete-user p{
-    position: relative;
-    bottom: 40px;
-    color: #000000;
-}
-
-.warning-delete-user input{
-    position: relative;
-    left: 57px;
-    bottom: 40px;
-}
-
-div.warning-delete-user a{
-    color: black;
-    position: relative;
-    left: 180px;
-    bottom: 54px;
-}
-
-.menage-account-section form input{
-    border-radius: 5px;
-    border: 3px solid black;
-}
-
-.submit-button-delete-account{
-    background-color: red;
-    color: white;
-    margin-left: 5px;
-}
-
-.menage-account-section form{
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -458,60 +383,6 @@ div.warning-delete-user a{
 
 .show-all-users p{
     font-size: 20px;
-}
-
-/* edit premissions */
-
-div.options-edit-account{
-    display: flex;
-    width: 400px;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-div.options-edit-account input{
-    width: 110px;
-    height: 50px;
-    border-radius: 5px;
-    border: 3px black solid;
-    background-color: #FF0000;
-    color: white;
-}
-
-.edit-premissions fieldset{
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.edit-premissions fieldset input{
-    height: 15px;
-}
-
-.edit-premissions fieldset div{
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    position: unset;
-    border: none;
-}
-
-div.edit-premissions{
-    display: none;
-    margin-top: 20px;
-}
-
-input.submit-input-edit-premissions{
-    width: 100px;
-    height: 25px;
-    background-color: #FF8A98;
-}
-
-/* edit account */
-
-div.edit-account{
-    display: none;
 }
 
 /* edit menu-page */
@@ -573,6 +444,53 @@ div.edit-account{
     width: 200px;
     justify-content: space-between;
     text-decoration: underline;
+}
+
+.main-backlog-manage-account input.input-place{
+    height: 22px;
+    width: 150px;
+    border-radius: 5px;
+    border: 3px black solid;
+}
+
+.main-backlog-manage-account input.submit-button{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 3px black solid;
+    background-color: #FF0000;
+    color: white;
+    text-align: center;
+}
+
+.edit-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-account form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+.edit-premission-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.edit-premission-form fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
 }
 
 /* edit item page */

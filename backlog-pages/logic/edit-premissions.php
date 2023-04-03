@@ -26,7 +26,6 @@
 
         $sql = "UPDATE user SET roll=:roll WHERE id=:id";
         $stmt = $conn->prepare($sql);
-        echo "conn \n";
         $stmt->execute($data);
         echo "user edit";
         header("Location: ../manage-account.php");

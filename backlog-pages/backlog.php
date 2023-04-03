@@ -37,12 +37,12 @@
                     <p>Home</p>
                 </button>
             </a>
-            <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>
                     <p>manage item</p>
                 </button>
             </a>
+            <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-account.php">
                 <button>
                     <p>manage account</p>

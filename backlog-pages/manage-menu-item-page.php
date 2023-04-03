@@ -45,12 +45,12 @@
                     <p>Home</p>
                 </button>
             </a>
-            <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-menu-item-page.php">
                 <button>
                     <p>manage item</p>
                 </button>
             </a>
+            <?php if ($_SESSION['user-roll'] <= 4): ?>
             <a href="manage-account.php">
                 <button>
                     <p>manage account</p>
@@ -109,26 +109,28 @@
                     $category = "luxury sushi item";
                 }
             
-                echo"
-                    <div class='menu-item-display'>
-                        <div class='small-info-menu-item'>
-                            <h1>".$row['name']."</h1>
-                        </div>
-                        <div class='more-info-menu-item'>
-                            <p> description : ".$row['description']."</p>
-                            <p> Price : €".$row['price']."</p>
-                            <p> category : ". $category ."<p>
-                        </div>
-                        <div class='menu-items-edit-options'>
-                                <a href='edit-menu-item-page.php?id=".$row['id']."'>
-                                    <p>edit item</p>
-                                </a>
-                                <a href='../backlog-pages/logic/delete-menu-item.php?id=".$row['id']."'>
-                                    <p>delete item</p>
-                                </a>
-                        </div>
-                    </div>
-                ";   
+                    echo "<div class='menu-item-display'>";
+                        echo "<div class='small-info-menu-item'>";
+                            echo "<h1>".$row['name']."</h1>";
+                        echo "</div>";
+                        echo "<div class='more-info-menu-item'>";
+                            echo "<p> description : ".$row['description']."</p>";
+                            echo "<p> Price : €".$row['price']."</p>";
+                            echo "<p> category : ". $category ."<p>";
+                        echo "</div>";
+                        echo "<div class='menu-items-edit-options'>";
+                                echo "<a href='edit-menu-item-page.php?id=".$row['id']."'>";
+                                    echo "<p>edit item</p>";
+                                echo "</a>";
+
+                                if ($_SESSION['user-roll'] <= 4): 
+                                echo "<a href='../backlog-pages/logic/delete-menu-item.php?id=".$row['id']."'>";
+                                    echo"<p>delete item</p>";
+                                echo "</a>";
+                                endif;
+                                
+                        echo "</div>";
+                    echo "</div>";
             }
         ?>
         </section>

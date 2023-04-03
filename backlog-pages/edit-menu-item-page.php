@@ -66,7 +66,7 @@
             </div>
         </fieldset>
 
-        <input class="hidden-input" type="number" name="id" value="<?php echo $id; ?>">
+        <input class="hidden-input" type="hidden" name="id" value="<?php echo $id; ?>">
                     
         <input class="submit-button-add-new-item" type="submit" name='update-item' value="update-item">
 
