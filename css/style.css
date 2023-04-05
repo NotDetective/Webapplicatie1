@@ -504,3 +504,39 @@ main.main-backlog-manage-account{
     height: 0px;
     width: 0px;
 }
+
+.main-edit-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-account{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.edit-account form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 400px;
+}
+
+.edit-account input{
+    background-color: #FF8A98;
+    height: 50px;
+    width: 200px;
+    border: 5px black solid;
+    border-radius: 15px;
+    text-align: center;
+}
+
+input.submit-button-edit-account{
+    background-color: #FF0000;
+    border: 5px black solid;
+    border-radius: 15px;
+    width: 120px;
+}

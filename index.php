@@ -46,6 +46,11 @@
             </a>
             <?php endif; ?>
             <?php if (isset($_SESSION['username'])):?>
+            <a href="manage-account-user.php">
+                <button>
+                    <p>edit account</p>
+                </button>
+            </a>
             <a href="logout.php">
                 <button>
                     <p>log out</p>

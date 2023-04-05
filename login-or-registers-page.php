@@ -28,15 +28,35 @@
         </div>
         <nav>
             <a href="contact-page.php">
-                <button>
+                <button class="test">
                     <p>Contact</p>
                 </button>
             </a>
+            <?php if (isset($_SESSION['user-roll']) && $_SESSION['user-roll'] <= 9 ):?>
+            <a href="backlog-pages/backlog.php">
+                <button>
+                    <p>home admin</p>
+                </button>
+            </a>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['username'])):?>
+            <a href="manage-account-user.php">
+                <button>
+                    <p>edit account</p>
+                </button>
+            </a>
+            <a href="logout.php">
+                <button>
+                    <p>log out</p>
+                </button>
+            </a>
+            <?php else: ?>
             <a href="login-or-registers-page.php">
                 <button>
                     <p>Log in</p>
                 </button>
             </a>
+            <?php endif; ?>
         </nav>
     </header>
 

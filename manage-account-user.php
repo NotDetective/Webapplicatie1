@@ -38,7 +38,7 @@
             </a>
             <?php endif; ?>
             <?php if (isset($_SESSION['username'])):?>
-            <a href="manage-account-user.php">
+            <a href="manage-account.php">
                 <button>
                     <p>edit account</p>
                 </button>
@@ -58,8 +58,33 @@
         </nav>
     </header>
 
-    <main>
-        <h1>contact</h1>
+    <main class="main-edit-account">
+        <section>
+                <h1>Welkom <?php echo $_SESSION['username']; ?></h1>
+        </section>
+
+        <section class="edit-account">
+            <form name="edit-account-new-password" action="edit-account-page-new-password.php" method="POST">
+                <h1> <font color=red> <?php echo $_SESSION['new-password']; $_SESSION['new-password'] = "";  ?> </font> </h1>
+                <h1>edit new password</h1>
+                <input type="password" name="old-password"  placeholder="old password">
+                    
+                <input type="password" name="new-password"  placeholder="new password">
+
+                <input class="submit-button-edit-account" type="submit" name="submit-new-password">
+            </form>
+
+            <form name="edit-account-new-username" action="edit-account-page-new-username.php" method="POST">
+                <h1> <font color=red> <?php echo $_SESSION['new-username']; $_SESSION['new-username'] = "";  ?> </font> </h1>
+                <h1>edit new username</h1>
+                <input type="username" name="new-username" placeholder="new username">
+
+                <input type="password" name="password" placeholder="password">
+
+                <input class="submit-button-edit-account" type="submit" name="submit-new-username">
+            </form>
+        </section>
+
     </main>
 </body>
 </html>
