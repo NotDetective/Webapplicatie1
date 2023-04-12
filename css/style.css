@@ -262,6 +262,36 @@ form p{
 
 /* Main backlog */
 
+.main-backlog{
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-backlog section{
+    margin-top: 50px;
+    width: 1800px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-choice-page{
+    height: 300px;
+    width: 500px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-choice-page img{
+    height: 200px;
+    width: auto;
+}
+
 .main-backlog p, .main-backlog h1{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -316,13 +346,6 @@ fieldset{
     width: 400px;
     display: flex;
     justify-content: space-between;
-}
-
-.main-backlog{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .submit-button-add-new-item{

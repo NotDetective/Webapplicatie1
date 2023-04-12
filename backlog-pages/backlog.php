@@ -52,7 +52,22 @@
         </nav>
     </header>
     <main class="main-backlog">
-        <h1>backlog</h1>
+        <section>
+            <a href="edit-menu-item-page.php">
+                <div class="home-choice-page">
+                    <h1>edit or add menu item</h1>
+                    <img src="../img/edit-item.jpg" alt="image edit iten">
+                </div>
+            </a>
+            <?php if ($_SESSION['user-roll'] <= 4): ?>
+                <a href="manage-account.php">
+                    <div class="home-choice-page">
+                        <h1>edit/delete account or add employee</h1>
+                        <img src="../img/edit-account.png" alt="image edit account">
+                    </div>
+                </a>
+            <?php endif; ?> 
+        </section>
     </main>
 
 </body>
