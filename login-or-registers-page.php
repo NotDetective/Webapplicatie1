@@ -28,7 +28,7 @@
         </div>
         <nav>
             <a href="contact-page.php">
-                <button class="test">
+               <button>
                     <p>Contact</p>
                 </button>
             </a>
@@ -45,7 +45,7 @@
                     <p>edit account</p>
                 </button>
             </a>
-            <a href="logout.php">
+            <a href="logic/logout.php">
                 <button>
                     <p>log out</p>
                 </button>
@@ -72,7 +72,7 @@
 
         <section>
             <h1>Login</h1>
-            <form naam="login" action="login-page.php" method="POST">
+            <form naam="login" action="logic/login-page.php" method="POST">
 
                 <input class="input-form-login-register-page" type="username" name='username' placeholder="username" required maxlength="8">
 
@@ -92,7 +92,7 @@
 
         <section>
             <h1>register</h1>
-            <form naam="register" action="register-page.php" method="POST">
+            <form naam="register" action="logic/register-page.php" method="POST">
 
                 <input class="input-form-login-register-page" type="username" name='username' placeholder="username" required>
 

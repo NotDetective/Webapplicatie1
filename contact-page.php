@@ -26,7 +26,7 @@
         </div>
         <nav>
             <a href="contact-page.php">
-                <button class="test">
+               <button>
                     <p>Contact</p>
                 </button>
             </a>
@@ -43,7 +43,7 @@
                     <p>edit account</p>
                 </button>
             </a>
-            <a href="logout.php">
+            <a href="logic/logout.php">
                 <button>
                     <p>log out</p>
                 </button>

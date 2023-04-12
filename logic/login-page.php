@@ -10,7 +10,7 @@
     
     <?php
         session_start();
-        require_once 'pages/conn.php';
+        require_once '../pages/conn.php';
 
         $username = $_POST['username'];
   
@@ -26,14 +26,14 @@
             if ($row['username'] == $username AND $row['password'] == $password) {
                 if ($row['roll'] < 10) {
                     $_SESSION['user-roll'] = $row['roll'];
-                    header("Location: backlog-pages/backlog.php");
+                    header("Location: ../backlog-pages/backlog.php");
                 }else{
-                    header("Location: index.php");
+                    header("Location: ../index.php");
                 }
             }
             else{
                 $_SESSION['login-message'] = "username or password is not correct";
-                header("Location: login-or-registers-page.php");
+                header("Location: ../login-or-registers-page.php");
             }
 
 

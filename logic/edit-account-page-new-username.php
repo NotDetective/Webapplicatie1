@@ -10,7 +10,7 @@
     <?php
         session_start();
 
-        require_once 'pages/conn.php';
+        require_once '../pages/conn.php';
 
         if (isset($_POST['submit-new-username'])) {
             
@@ -42,19 +42,19 @@
     
                     $_SESSION['username'] = $username;
                     $_SESSION['new-username'] = "updated username";
-                    header("Location: manage-account-user.php");
+                    header("Location: ../manage-account-user.php");
     
                 }else{
-                    header("Location: manage-account-user.php");
+                    header("Location: ../manage-account-user.php");
                 }
 
             }else{
                 $_SESSION['new-username'] = "password is not correct";
-                header("Location: manage-account-user.php");
+                header("Location: ../manage-account-user.php");
             }
 
         }else{
-            header("Location: manage-account-user.php");
+            header("Location: ../manage-account-user.php");
         }
 
     ?>

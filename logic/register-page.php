@@ -10,7 +10,7 @@
     
     <?php
         session_start();
-        require_once 'pages/conn.php';
+        require_once '../pages/conn.php';
 
         if (isset($_POST['submit'])) {
             $username = $_POST['username']; 
@@ -18,11 +18,11 @@
             if (strpos($username, " ") !== false) {
                
                 $_SESSION['register-message'] = "username cant contain a space";
-                header("Location: login-or-registers-page.php");
+                header("Location: ../login-or-registers-page.php");
             }
             else if (strpos($password, " ") !== false) {
                 $_SESSION['register-message'] = "password cant contain a space";
-                header("Location: login-or-registers-page.php");
+                header("Location: ../login-or-registers-page.php");
             }
             else{
                 $sql = "INSERT INTO user (username, password) 
@@ -33,7 +33,7 @@
                 echo "new record created";
                 $_SESSION['register-message'] = "";
                 $_SESSION['confirm-register-message'] = "register successfully";
-                header("Location: login-or-registers-page.php");
+                header("Location: ../login-or-registers-page.php");
             }
         }
 

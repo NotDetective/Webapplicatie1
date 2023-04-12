@@ -26,7 +26,7 @@
         </div>
         <nav>
             <a href="contact-page.php">
-                <button class="test">
+               <button>
                     <p>Contact</p>
                 </button>
             </a>
@@ -43,7 +43,7 @@
                     <p>edit account</p>
                 </button>
             </a>
-            <a href="logout.php">
+            <a href="logic/logout.php">
                 <button>
                     <p>log out</p>
                 </button>
@@ -64,7 +64,7 @@
         </section>
 
         <section class="edit-account">
-            <form name="edit-account-new-password" action="edit-account-page-new-password.php" method="POST">
+            <form name="edit-account-new-password" action="logic/edit-account-page-new-password.php" method="POST">
                 <h1> <font color=red> <?php echo $_SESSION['new-password']; $_SESSION['new-password'] = "";  ?> </font> </h1>
                 <h1>edit new password</h1>
                 <input type="password" name="old-password"  placeholder="old password">
@@ -74,7 +74,7 @@
                 <input class="submit-button-edit-account" type="submit" name="submit-new-password">
             </form>
 
-            <form name="edit-account-new-username" action="edit-account-page-new-username.php" method="POST">
+            <form name="edit-account-new-username" action="logic/edit-account-page-new-username.php" method="POST">
                 <h1> <font color=red> <?php echo $_SESSION['new-username']; $_SESSION['new-username'] = "";  ?> </font> </h1>
                 <h1>edit new username</h1>
                 <input type="username" name="new-username" placeholder="new username">

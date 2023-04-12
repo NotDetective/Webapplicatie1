@@ -27,7 +27,7 @@
             <h1 class="header-name-admin">Atomic Sushi Admin</h1>
         </div>
         <nav>
-            <a href="../logout.php">
+            <a href="../logic/logout.php">
                 <button>
                     <p>Log out</p>
                 </button>
