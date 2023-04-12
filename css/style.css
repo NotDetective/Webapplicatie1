@@ -335,9 +335,12 @@ fieldset{
 
 /* code for menage account */
 
-h1.confirm-deleted-user{
-    font-family: Arial, Helvetica, sans-serif;
-    color: red;
+.main-backlog-manage-account section{
+    width: 370px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    height: 550px;
 }
 
 main.main-backlog-manage-account{
@@ -372,9 +375,8 @@ main.main-backlog-manage-account{
 }
 
 .show-all-users{
-    width: 250px;
+    width: 370px;
     height: 500px;
-    margin-left: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -383,6 +385,87 @@ main.main-backlog-manage-account{
 
 .show-all-users p{
     font-size: 20px;
+}
+
+.edit-account-backlog{
+    width: 370px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-account-backlog form{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-account-backlog form div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-account-backlog form input{
+    margin-top: 40px;
+}
+
+.delete-account-backlog{
+    width: 370px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-account-backlog form{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-account-backlog form input{
+    margin-top: 40px;
+}
+
+.delete-account-backlog p {
+    width: 200px;
+}
+
+.edit-premissions-backlog{
+    width: 370px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-premissions-backlog form{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-premissions-backlog form div{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-users{
+    text-align: center;
+    width: 300px;
+    border-top: 1px solid #FF0000;
 }
 
 /* edit menu-page */
@@ -448,14 +531,14 @@ main.main-backlog-manage-account{
 
 .main-backlog-manage-account input.input-place{
     height: 22px;
-    width: 150px;
+    width: 250px;
     border-radius: 5px;
     border: 3px black solid;
 }
 
 .main-backlog-manage-account input.submit-button{
-    width: 50px;
-    height: 30px;
+    width: 110px;
+    height: 35px;
     border-radius: 5px;
     border: 3px black solid;
     background-color: #FF0000;
@@ -504,6 +587,8 @@ main.main-backlog-manage-account{
     height: 0px;
     width: 0px;
 }
+
+/* edit account users */
 
 .main-edit-account{
     display: flex;

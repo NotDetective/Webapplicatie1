@@ -8,9 +8,10 @@
 
     $stmt->execute(); 
     $row = $stmt->fetchAll();
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +24,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap');
     </style>
 </head>
+
 <body>
-<header class="header-backlog">
+    <header class="header-backlog">
         <div>
             <a href="backlog.php">
                 <div>
@@ -55,115 +57,123 @@
                     <p>manage account</p>
                 </button>
             </a>
-            <?php endif; ?> 
+            <?php endif; ?>
         </nav>
     </header>
     <main class="main-backlog-manage-account">
 
         <section>
             <div class="show-all-users">
-                <h1> Managers</h1>
+                <h1>All users and id</h1>
+                <h1 class="category-users">Managers</h1>
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 4) {
-                        echo "<p>" . 'id of user '. $userdata['username'] . ' is ' . $userdata['id']. "</p>";
+                        echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
                     }
                     }
                 ?>
-                <h1>Employee</h1>
+                <h1 class="category-users">Employee</h1>
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 7) {
-                        echo "<p>" . 'id of user '. $userdata['username'] . ' is ' . $userdata['id']. "</p>";
+                        echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
                     }
                     }
                 ?>
-                <h1>Customers</h1>
+                <h1 class="category-users">Customers</h1>
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 10) {
-                        echo "<p>" . 'id of user '. $userdata['username'] . ' is ' . $userdata['id']. "</p>";
+                        echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
                     }
                     }
                 ?>
+
+
             </div>
         </section>
 
         <section>
-            <div class="edit-account">
-                <p> <font color=red><?php echo $_SESSION['error-edit-account']; $_SESSION['error-edit-account'] =""; ?>  </font></p>
+            <div class="edit-account-backlog">
                 <h1>edit item page</h1>
+                <p>
+                    <font color=red><?php echo $_SESSION['error-edit-account']; $_SESSION['error-edit-account'] =""; ?>
+                    </font>
+                </p>
                 <form name="edit-account" action="../backlog-pages/logic/edit-account.php" method="POST">
-                    <input class="input-place" type="number" name='id' placeholder='user id'>
+                    <div>
+                        <input class="input-place" type="number" name='id' placeholder='user id'>
+                        <input class="input-place" type="username" name="username" placeholder="New username">
+                        <input class="input-place" type="text" name="password" placeholder="New password">
+                    </div>
 
-                    <input class="input-place" type="username" name="username" placeholder="New username">
-                    <input class="input-place" type="text" name="password" placeholder="New password">
-
-                    <input class="submit-button" type="submit" name='edit-premissions' value="submit" >
+                    <input class="submit-button" type="submit" name='edit-premissions' value="submit">
                 </form>
             </div>
         </section>
 
         <?php if ($_SESSION['user-roll'] ==1): ?>
         <section>
-            <div class="menage-account-section">
-                <div>
-                    <div class="text-area">
-                        <h1>delete account</h1>
-                        <p>warning there is not recover option for deleted users.</p>
+            <div class="delete-account-backlog">
+                <h1>delete account</h1>
+                <p> <font color=red>warning </font> there is not recover option for deleted users.</p>
+
+                <form name="delete-account" action="../backlog-pages/logic/delete-account.php" method="POST">
+
+                    <input class="input-place" type='number' name='id' placeholder="user id">
+
+                    <div>
+                        <input class="submit-button" type="submit" name="button" value="delete account"
+                            onclick="display_warning_delete_user();">
                     </div>
 
-                    <form name="delete-account" action="../backlog-pages/logic/delete-account.php" method="POST">
-
-                        <input class="input-place" type='number' name='id' placeholder="user id">
-
-                        <input class="submit-button" type="submit" name="button" value="delete account" onclick="display_warning_delete_user();">
-
-                    </form>
-                </div>
+                </form>
             </div>
         </section>
         <?php endif; ?>
 
         <section>
-            <div class="edit-premissions">
-                <form class="edit-premission-form" naam="edit-premissions" action="../backlog-pages/logic/edit-premissions.php" method="POST">
+            <div class="edit-premissions-backlog">
+                <form class="edit-premission-form" naam="edit-premissions"
+                    action="../backlog-pages/logic/edit-premissions.php" method="POST">
                     <h1>add or remove employee</h1>
-                    <input class="input-place" type="number" name='id' placeholder="user id" required>
-                    <fieldset>
-                        <div>
-                            <input type="radio" id="boxen" name='edit-roll' value=10 required>
-                            <label for="boxen">Remove employee</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="boxen" name='edit-roll' value=7 required>
-                            <label for="boxen">Add employee</label>
-                        </div>
-                        <?php if ($_SESSION['user-roll'] == 1): ?>
-                        <div>
-                            <input type="radio" id="boxen" name='edit-roll' value=4 required>
-                            <label for="boxen">Add Manager</label>
-                        </div>
-                        <?php endif; ?>
-                    </fieldset>
-                    <input class="submit-button" type="submit" name='edit-premissions' value="submit" >
+                    <div>
+                        <input class="input-place" type="number" name='id' placeholder="user id" required>
+                        <fieldset>
+                            <div>
+                                <input type="radio" id="boxen" name='edit-roll' value=10 required>
+                                <label for="boxen">Remove employee</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="boxen" name='edit-roll' value=7 required>
+                                <label for="boxen">Add employee</label>
+                            </div>
+                            <?php if ($_SESSION['user-roll'] == 1): ?>
+                            <div>
+                                <input type="radio" id="boxen" name='edit-roll' value=4 required>
+                                <label for="boxen">Add Manager</label>
+                            </div>
+                            <?php endif; ?>
+                        </fieldset>
+                    </div>
+                    <input class="submit-button" type="submit" name='edit-premissions' value="submit">
                 </form>
             </div>
         </section>
 
-        
+
 
     </main>
 
 </body>
 <script>
+function display_warning_delete_user() {
 
-    function display_warning_delete_user() {
-        
-        if(confirm('are you user? you cant recover deleted accounts') == false){
-            event.preventDefault()
-        }
+    if (confirm('are you user? you cant recover deleted accounts') == false) {
+        event.preventDefault()
     }
-
+}
 </script>
+
 </html>
