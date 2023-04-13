@@ -68,6 +68,8 @@
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 4) {
+                        echo "<div>";
+
                         echo "<form name='delete-account' action='../backlog-pages/logic/delete-account.php' method='POST'> ";
 
                         echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
@@ -78,8 +80,15 @@
                             echo "<input type='submit' name='button' value=''
                             onclick='display_warning_delete_user();'> ";
                         }
-  
+
                         echo "</form>";
+
+                        echo"<form class='edit-form' name='add it to page' action='manage-account.php' method='POST'>";
+                            echo "<input type='hidden' name='user-id'  value='" . $userdata['id'] . "'>";
+                            echo "<input class='add-id-page' name='submit' type='submit' value=''>";
+                        echo "</form>";
+
+                        echo "</div>";
                         
                     }
                     }
@@ -88,6 +97,8 @@
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 7) {
+                        echo "<div>";
+
                         echo "<form name='delete-account' action='../backlog-pages/logic/delete-account.php' method='POST'> ";
 
                         echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
@@ -98,8 +109,15 @@
                             echo "<input type='submit' name='button' value=''
                             onclick='display_warning_delete_user();'> ";
                         }
-  
+
                         echo "</form>";
+
+                        echo"<form class='edit-form' name='add it to page' action='manage-account.php' method='POST'>";
+                            echo "<input type='hidden' name='user-id'  value='" . $userdata['id'] . "'>";
+                            echo "<input class='add-id-page' name='submit' type='submit' value=''>";
+                        echo "</form>";
+
+                        echo "</div>";
                     }
                     }
                 ?>
@@ -107,6 +125,8 @@
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 10) {
+                        echo "<div>";
+
                         echo "<form name='delete-account' action='../backlog-pages/logic/delete-account.php' method='POST'> ";
 
                         echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
@@ -117,8 +137,15 @@
                             echo "<input type='submit' name='button' value=''
                             onclick='display_warning_delete_user();'> ";
                         }
-  
+
                         echo "</form>";
+
+                        echo"<form class='edit-form' name='add it to page' action='manage-account.php' method='POST'>";
+                            echo "<input type='hidden' name='user-id'  value='" . $userdata['id'] . "'>";
+                            echo "<input class='add-id-page' name='submit' type='submit' value=''>";
+                        echo "</form>";
+
+                        echo "</div>";
                     }
                     }
                 ?>
@@ -136,7 +163,13 @@
                 </p>
                 <form name="edit-account" action="../backlog-pages/logic/edit-account.php" method="POST">
                     <div>
-                        <input class="input-place" type="number" name='id' placeholder='user id'>
+                        <input class="input-place" type="number" name='id' 
+                        <?php if (isset($_POST['user-id'])): ?>
+                            value="<?php echo $_POST['user-id'] ?>"
+                        <?php else: ?>
+                            placeholder="user id" 
+                        <?php endif; ?>
+                        >
                         <input class="input-place" type="username" name="username" placeholder="New username">
                         <input class="input-place" type="text" name="password" placeholder="New password">
                     </div>

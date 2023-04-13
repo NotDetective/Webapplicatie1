@@ -53,7 +53,7 @@
     </header>
     <main class="main-backlog">
         <section>
-            <a href="edit-menu-item-page.php">
+            <a href="manage-menu-item-page.php">
                 <div class="home-choice-page">
                     <h1>edit or add menu item</h1>
                     <img src="../img/edit-item.jpg" alt="image edit iten">

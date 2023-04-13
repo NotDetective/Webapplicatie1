@@ -402,11 +402,22 @@ section.section-show-all-users{
     height: 550px;
 }
 
-.show-all-users form{
-    width: 300px;
+.show-all-users div{
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.show-all-users form{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form.edit-form{
+    width: auto;
 }
 
 .show-all-users{
@@ -425,6 +436,24 @@ section.section-show-all-users{
     width: 30px;
     background-size: cover;
     background-color: white;
+}
+
+input.add-id-page{
+    background-image: url(../img/edit-icon.svg);
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    background-color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield; 
 }
 
 .show-all-users p{
