@@ -61,14 +61,26 @@
     </header>
     <main class="main-backlog-manage-account">
 
-        <section>
+        <section class="section-show-all-users">
             <div class="show-all-users">
                 <h1>All users and id</h1>
                 <h1 class="category-users">Managers</h1>
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 4) {
+                        echo "<form name='delete-account' action='../backlog-pages/logic/delete-account.php' method='POST'> ";
+
                         echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
+
+                        echo"<input type='hidden' name='id'  value='". $userdata['id'] ."'>";
+
+                        if ($_SESSION['user-roll'] ==1){
+                            echo "<input type='submit' name='button' value=''
+                            onclick='display_warning_delete_user();'> ";
+                        }
+  
+                        echo "</form>";
+                        
                     }
                     }
                 ?>
@@ -76,7 +88,18 @@
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 7) {
+                        echo "<form name='delete-account' action='../backlog-pages/logic/delete-account.php' method='POST'> ";
+
                         echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
+
+                        echo"<input type='hidden' name='id'  value='". $userdata['id'] ."'>";
+
+                        if ($_SESSION['user-roll'] ==1){
+                            echo "<input type='submit' name='button' value=''
+                            onclick='display_warning_delete_user();'> ";
+                        }
+  
+                        echo "</form>";
                     }
                     }
                 ?>
@@ -84,7 +107,18 @@
                 <?php
                     foreach ($row AS $userdata){
                     if ($userdata['roll'] == 10) {
+                        echo "<form name='delete-account' action='../backlog-pages/logic/delete-account.php' method='POST'> ";
+
                         echo "<p>" . 'id of user <font color=red> '. $userdata['username'] . '</font> is <font color=red> ' . $userdata['id']. " </font></p>";
+
+                        echo"<input type='hidden' name='id'  value='". $userdata['id'] ."'>";
+
+                        if ($_SESSION['user-roll'] ==1){
+                            echo "<input type='submit' name='button' value=''
+                            onclick='display_warning_delete_user();'> ";
+                        }
+  
+                        echo "</form>";
                     }
                     }
                 ?>
@@ -95,7 +129,7 @@
 
         <section>
             <div class="edit-account-backlog">
-                <h1>edit item page</h1>
+                <h1>edit account</h1>
                 <p>
                     <font color=red><?php echo $_SESSION['error-edit-account']; $_SESSION['error-edit-account'] =""; ?>
                     </font>
@@ -112,33 +146,19 @@
             </div>
         </section>
 
-        <?php if ($_SESSION['user-roll'] ==1): ?>
-        <section>
-            <div class="delete-account-backlog">
-                <h1>delete account</h1>
-                <p> <font color=red>warning </font> there is not recover option for deleted users.</p>
-
-                <form name="delete-account" action="../backlog-pages/logic/delete-account.php" method="POST">
-
-                    <input class="input-place" type='number' name='id' placeholder="user id">
-
-                    <div>
-                        <input class="submit-button" type="submit" name="button" value="delete account"
-                            onclick="display_warning_delete_user();">
-                    </div>
-
-                </form>
-            </div>
-        </section>
-        <?php endif; ?>
-
         <section>
             <div class="edit-premissions-backlog">
                 <form class="edit-premission-form" naam="edit-premissions"
                     action="../backlog-pages/logic/edit-premissions.php" method="POST">
                     <h1>add or remove employee</h1>
                     <div>
-                        <input class="input-place" type="number" name='id' placeholder="user id" required>
+                        <input class="input-place" type="number" name='id'
+                        <?php if (isset($_POST['user-id'])): ?>
+                            value="<?php echo $_POST['user-id'] ?>"
+                        <?php else: ?>
+                            placeholder="user id" 
+                        <?php endif; ?>
+                        required>
                         <fieldset>
                             <div>
                                 <input type="radio" id="boxen" name='edit-roll' value=10 required>
