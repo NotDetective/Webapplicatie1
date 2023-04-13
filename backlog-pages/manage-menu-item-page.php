@@ -120,12 +120,12 @@
                         echo "</div>";
                         echo "<div class='menu-items-edit-options'>";
                                 echo "<a href='edit-menu-item-page.php?id=".$row['id']."'>";
-                                    echo "<p>edit item</p>";
+                                    echo "<font color = blue><p>edit item</p></font>";
                                 echo "</a>";
 
                                 if ($_SESSION['user-roll'] <= 4): 
                                 echo "<a href='../backlog-pages/logic/delete-menu-item.php?id=".$row['id']."'>";
-                                    echo"<p>delete item</p>";
+                                    echo"<font color = red> <p>delete item</p> </font>";
                                 echo "</a>";
                                 endif;
                                 
