@@ -1,0 +1,11 @@
+Owner:
+    username : fred 
+    password : ex
+
+Managers:
+    username : berardt
+    password : berard
+
+Employee:
+    username : sussy
+    password : bakka
